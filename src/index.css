@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  html.dark body {
+    background-color: #0B1220;
+    color: #F1F5F9;
+  }
+}
+
+/* Elevated Enterprise 3D Card */
+.elevated-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 
+    0 10px 25px -5px rgba(15, 23, 42, 0.05),
+    0 4px 6px -2px rgba(15, 23, 42, 0.02),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.elevated-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(203, 213, 225, 0.9);
+  box-shadow: 
+    0 20px 32px -8px rgba(15, 23, 42, 0.08),
+    0 8px 12px -3px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+}
+
+/* Dark Mode Elevated Multi-layer Card */
+html.dark .elevated-card {
+  background: #162238;
+  border: 1px solid #2B3B53;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.45),
+    0 4px 6px -2px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+html.dark .elevated-card:hover {
+  border-color: #3B82F6;
+  box-shadow: 
+    0 20px 32px -8px rgba(0, 0, 0, 0.65),
+    0 8px 12px -3px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 0 rgba(59, 130, 246, 0.18);
+}
+
+/* 3D Icon Pedestal / Plinth */
+.icon-pedestal {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  border: 1px solid #E2E8F0;
+  box-shadow: 
+    0 4px 8px -2px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+}
+
+html.dark .icon-pedestal {
+  background: linear-gradient(180deg, #1D2B42 0%, #111B2E 100%);
+  border: 1px solid #2B3B53;
+  box-shadow: 
+    0 4px 8px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Smooth Scroll Reveal Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Attached Image Custom Toggle Switch */
+.theme-switch-track {
+  width: 52px;
+  height: 28px;
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  background-color: #DDE1E6;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+}
+html.dark .theme-switch-track {
+  background-color: #2F333A;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.theme-switch-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html.dark .theme-switch-thumb {
+  transform: translateX(24px);
+}
+.theme-switch-sun {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #FF6E4A 0%, #FF4422 65%, #DF2808 100%);
+  box-shadow: 0 1px 3px rgba(223, 40, 8, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  transition: opacity 0.2s ease, transform 0.25s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+html.dark .theme-switch-sun {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+.theme-switch-moon {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+html.dark .theme-switch-moon {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Eye-Friendly Refined Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+  border: 2px solid #F1F5F9;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border: 2px solid #0B0F19;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ==========================================================================
+   3D MULTI-LAYERED DROP SHADOW SYSTEM & CONTRAST GUARANTEE
+   ========================================================================== */
+
+/* Active primary blue buttons retain crisp white text */
+button.bg-blue-600,
+button.bg-blue-600 *,
+html.dark button[class*="dark:bg-blue-600"],
+html.dark button[class*="dark:bg-blue-600"] * {
+  color: #ffffff;
+}
+
+button.bg-blue-600 svg,
+html.dark button[class*="dark:bg-blue-600"] svg {
+  stroke: #ffffff;
+}
+
+/* 3D Drop Shadow Effect & Depth Hierarchy */
+.shadow-3d {
+  box-shadow: 
+    0 2px 4px rgba(15, 23, 42, 0.04),
+    0 8px 20px -2px rgba(15, 23, 42, 0.08),
+    0 20px 32px -4px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.shadow-3d-lg {
+  box-shadow: 
+    0 4px 6px rgba(15, 23, 42, 0.04),
+    0 12px 28px -4px rgba(15, 23, 42, 0.12),
+    0 28px 48px -8px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+.shadow-3d-sm {
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.05),
+    0 4px 10px -1px rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+html:not(.dark) .shadow-3d {
+  box-shadow: 
+    0 2px 4px rgba(15, 23, 42, 0.03),
+    0 10px 24px -2px rgba(15, 23, 42, 0.06),
+    0 24px 38px -6px rgba(15, 23, 42, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+html:not(.dark) .shadow-3d-lg {
+  box-shadow: 
+    0 4px 8px rgba(15, 23, 42, 0.04),
+    0 16px 36px -4px rgba(15, 23, 42, 0.08),
+    0 32px 56px -8px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+html:not(.dark) .shadow-3d-sm {
+  box-shadow: 
+    0 1px 3px rgba(15, 23, 42, 0.04),
+    0 4px 12px -1px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.elevated-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.elevated-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Subtle contrast safeguards (safe, non-destructive — never overrides Tailwind dark:* utilities) */
+html:not(.dark) {
+  color: #0f172a;
+}
+
+html:not(.dark) .recharts-cartesian-axis-tick text,
+html:not(.dark) .recharts-text {
+  fill: #475569 !important;
+  font-weight: 500 !important;
+}
+
+html:not(.dark) .recharts-cartesian-grid line {
+  stroke: #e2e8f0 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #64748b;
+}

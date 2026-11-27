@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CPVIA — Client Performance & Telemetry Portal</title>
+  
+  <!-- All-in-One Self-Contained Styles: Compiled Tailwind CSS + Custom Animations & Dark Mode Variables -->
+  <style>
+*,:before,:after{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}:before,:after{--tw-content: ""}html,:host{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:JetBrains Mono,Fira Code,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}html{scroll-behavior:smooth}body{background-color:#f8fafc;color:#0f172a;font-family:Inter,system-ui,-apple-system,sans-serif;transition:background-color .25s ease,color .25s ease}html.dark body{background-color:#0b0f19;color:#f1f5f9}.pointer-events-none{pointer-events:none}.static{position:static}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{top:0;right:0;bottom:0;left:0}.bottom-6{bottom:1.5rem}.right-6{right:1.5rem}.top-0{top:0}.top-\[37px\]{top:37px}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-2\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-3\.5{margin-top:.875rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:.375rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-3{height:.75rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-\[18px\]{height:18px}.h-auto{height:auto}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-1\.5{width:.375rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-2\.5{width:.625rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-\[10\%\]{width:10%}.w-\[100\%\]{width:100%}.w-\[15\%\]{width:15%}.w-\[18px\]{width:18px}.w-\[53\%\]{width:53%}.w-\[63\%\]{width:63%}.w-\[65\%\]{width:65%}.w-\[70\%\]{width:70%}.w-\[75\%\]{width:75%}.w-full{width:100%}.min-w-\[500px\]{min-width:500px}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-y-2{--tw-translate-y: -.5rem;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-0{--tw-translate-y: 0px;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-4{--tw-translate-y: 1rem;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.cursor-pointer{cursor:pointer}.select-all{-webkit-user-select:all;-moz-user-select:all;user-select:all}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem * var(--tw-space-y-reverse))}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.375rem * var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem * var(--tw-space-y-reverse))}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem * var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-7>:not([hidden])~:not([hidden]){--tw-space-y-reverse: 0;margin-top:calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.75rem * var(--tw-space-y-reverse))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse: 0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity: 1;border-color:rgb(241 245 249 / var(--tw-divide-opacity, 1))}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity: 1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity: 1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-blue-200{--tw-border-opacity: 1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-blue-600{--tw-border-opacity: 1;border-color:rgb(37 99 235 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity: 1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-emerald-200{--tw-border-opacity: 1;border-color:rgb(167 243 208 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity: 1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity: 1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-200\/80{border-color:#e2e8f0cc}.border-slate-200\/90{border-color:#e2e8f0e6}.border-slate-700{--tw-border-opacity: 1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.bg-\[\#F8FAFC\]{--tw-bg-opacity: 1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity: 1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity: 1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity: 1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-50\/70{background-color:#eff6ffb3}.bg-blue-500{--tw-bg-opacity: 1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity: 1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity: 1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-500{--tw-bg-opacity: 1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-emerald-600{--tw-bg-opacity: 1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity: 1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity: 1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity: 1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-50\/70{background-color:#f8fafcb3}.bg-slate-800{--tw-bg-opacity: 1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity: 1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/40{background-color:#0f172a66}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/90{background-color:#ffffffe6}.bg-white\/95{background-color:#fffffff2}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.from-amber-600{--tw-gradient-from: #d97706 var(--tw-gradient-from-position);--tw-gradient-to: rgb(217 119 6 / 0) var(--tw-gradient-to-position);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)}.from-blue-700{--tw-gradient-from: #1d4ed8 var(--tw-gradient-from-position);--tw-gradient-to: rgb(29 78 216 / 0) var(--tw-gradient-to-position);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)}.from-emerald-600{--tw-gradient-from: #059669 var(--tw-gradient-from-position);--tw-gradient-to: rgb(5 150 105 / 0) var(--tw-gradient-to-position);--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)}.to-amber-500{--tw-gradient-to: #f59e0b var(--tw-gradient-to-position)}.to-blue-500{--tw-gradient-to: #3b82f6 var(--tw-gradient-to-position)}.to-emerald-500{--tw-gradient-to: #10b981 var(--tw-gradient-to-position)}.fill-slate-400{fill:#94a3b8}.fill-white{fill:#fff}.stroke-slate-800{stroke:#1e293b}.p-1{padding:.25rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-7{padding-top:1.75rem;padding-bottom:1.75rem}.pt-2{padding-top:.5rem}.pt-2\.5{padding-top:.625rem}.pt-3{padding-top:.75rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.font-mono{font-family:JetBrains Mono,Fira Code,monospace}.font-sans{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.text-\[\#0F172A\]{--tw-text-opacity: 1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-\[\#58A6FF\]{--tw-text-opacity: 1;color:rgb(88 166 255 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity: 1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity: 1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity: 1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity: 1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity: 1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity: 1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity: 1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity: 1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity: 1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity: 1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity: 1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity: 1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-100{opacity:1}.shadow-2xl{--tw-shadow: 0 25px 50px -12px rgb(0 0 0 / .25);--tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-inner{--tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / .05);--tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-lg{--tw-shadow: 0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1);--tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);--tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / .05);--tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.drop-shadow-\[0_0_5px_rgba\(88\,166\,255\,0\.6\)\]{--tw-drop-shadow: drop-shadow(0 0 5px rgba(88,166,255,.6));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur: blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-200{transition-duration:.2s}.duration-300{transition-duration:.3s}.duration-500{transition-duration:.5s}.duration-700{transition-duration:.7s}.elevated-card{background:#fff;border:1px solid rgba(226,232,240,.85);box-shadow:0 10px 25px -5px #0f172a0d,0 4px 6px -2px #0f172a05,inset 0 1px #fffffff2;transition:all .3s cubic-bezier(.16,1,.3,1)}.elevated-card:hover{transform:translateY(-3px);border-color:#cbd5e1e6;box-shadow:0 20px 32px -8px #0f172a14,0 8px 12px -3px #0f172a08,inset 0 1px #fff}html.dark .elevated-card{background:#111827;border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 25px -5px #00000073,0 4px 6px -2px #00000040,inset 0 1px #ffffff0d}html.dark .elevated-card:hover{border-color:#ffffff29;box-shadow:0 20px 32px -8px #000000a6,0 8px 12px -3px #00000059,inset 0 1px #ffffff14}.icon-pedestal{background:linear-gradient(180deg,#fff,#f1f5f9);border:1px solid #E2E8F0;box-shadow:0 4px 8px -2px #0f172a0d,inset 0 1px #ffffffe6}html.dark .icon-pedestal{background:linear-gradient(180deg,#1e293b,#0f172a);border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 8px -2px #0006,inset 0 1px #ffffff14}@keyframes fadeInUp{0%{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}.animate-fade-in-up{animation:fadeInUp .55s cubic-bezier(.16,1,.3,1) forwards}.theme-switch-track{width:52px;height:28px;border-radius:9999px;position:relative;cursor:pointer;background-color:#dde1e6;border:1px solid rgba(0,0,0,.08);box-shadow:inset 0 1px 2px #00000014;transition:background-color .3s cubic-bezier(.16,1,.3,1),border-color .3s ease,box-shadow .3s ease;-webkit-user-select:none;-moz-user-select:none;user-select:none;display:inline-flex;align-items:center;padding:0}html.dark .theme-switch-track{background-color:#2f333a;border-color:#ffffff1f;box-shadow:inset 0 1px 3px #0006}.theme-switch-thumb{width:22px;height:22px;border-radius:9999px;position:absolute;top:2px;left:3px;transition:transform .3s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;justify-content:center}html.dark .theme-switch-thumb{transform:translate(24px)}.theme-switch-sun{width:100%;height:100%;border-radius:9999px;background:radial-gradient(circle at 35% 35%,#ff6e4a,#f42 65%,#df2808);box-shadow:0 1px 3px #df280866,inset 0 1px 1px #fff6;transition:opacity .2s ease,transform .25s ease;opacity:1;transform:scale(1)}html.dark .theme-switch-sun{opacity:0;transform:scale(.5);pointer-events:none}.theme-switch-moon{position:absolute;width:22px;height:22px;display:flex;align-items:center;justify-content:center;transition:opacity .2s ease,transform .25s ease;opacity:0;transform:scale(.5);pointer-events:none}html.dark .theme-switch-moon{opacity:1;transform:scale(1);pointer-events:auto}::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-track{background:#f1f5f9}html.dark ::-webkit-scrollbar-track{background:#0b0f19}::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:9999px;border:2px solid #F1F5F9}html.dark ::-webkit-scrollbar-thumb{background:#334155;border:2px solid #0B0F19}::-webkit-scrollbar-thumb:hover{background:#94a3b8}html.dark ::-webkit-scrollbar-thumb:hover{background:#475569}.selection\:bg-blue-100 *::-moz-selection{--tw-bg-opacity: 1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.selection\:bg-blue-100 *::selection{--tw-bg-opacity: 1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.selection\:text-blue-900 *::-moz-selection{--tw-text-opacity: 1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.selection\:text-blue-900 *::selection{--tw-text-opacity: 1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.selection\:bg-blue-100::-moz-selection{--tw-bg-opacity: 1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.selection\:bg-blue-100::selection{--tw-bg-opacity: 1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.selection\:text-blue-900::-moz-selection{--tw-text-opacity: 1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.selection\:text-blue-900::selection{--tw-text-opacity: 1;color:rgb(30 58 138 / var(--tw-text-opacity, 1))}.hover\:scale-105:hover{--tw-scale-x: 1.05;--tw-scale-y: 1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-slate-300:hover{--tw-border-opacity: 1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.hover\:bg-blue-700:hover{--tw-bg-opacity: 1;background-color:rgb(29 78 216 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-100:hover{--tw-bg-opacity: 1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity: 1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity: 1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-blue-600:hover{--tw-text-opacity: 1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.hover\:text-slate-700:hover{--tw-text-opacity: 1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity: 1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:text-slate-900:hover{--tw-text-opacity: 1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.hover\:underline:hover{text-decoration-line:underline}.hover\:shadow-xl:hover{--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / .1), 0 8px 10px -6px rgb(0 0 0 / .1);--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow, 0 0 #0000)}.focus\:ring-blue-500\/40:focus{--tw-ring-color: rgb(59 130 246 / .4)}.active\:scale-95:active{--tw-scale-x: .95;--tw-scale-y: .95;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.disabled\:opacity-50:disabled{opacity:.5}.group:hover .group-hover\:scale-105{--tw-scale-x: 1.05;--tw-scale-y: 1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.dark\:divide-slate-800:is(.dark *)>:not([hidden])~:not([hidden]){--tw-divide-opacity: 1;border-color:rgb(30 41 59 / var(--tw-divide-opacity, 1))}.dark\:border-amber-800:is(.dark *){--tw-border-opacity: 1;border-color:rgb(146 64 14 / var(--tw-border-opacity, 1))}.dark\:border-blue-400:is(.dark *){--tw-border-opacity: 1;border-color:rgb(96 165 250 / var(--tw-border-opacity, 1))}.dark\:border-blue-900\/60:is(.dark *){border-color:#1e3a8a99}.dark\:border-emerald-800:is(.dark *){--tw-border-opacity: 1;border-color:rgb(6 95 70 / var(--tw-border-opacity, 1))}.dark\:border-slate-600:is(.dark *){--tw-border-opacity: 1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.dark\:border-slate-700:is(.dark *){--tw-border-opacity: 1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.dark\:border-slate-700\/60:is(.dark *){border-color:#33415599}.dark\:border-slate-800:is(.dark *){--tw-border-opacity: 1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.dark\:border-slate-800\/80:is(.dark *){border-color:#1e293bcc}.dark\:bg-\[\#0B0F19\]:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(11 15 25 / var(--tw-bg-opacity, 1))}.dark\:bg-\[\#0B0F19\]\/90:is(.dark *){background-color:#0b0f19e6}.dark\:bg-\[\#0E1526\]:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(14 21 38 / var(--tw-bg-opacity, 1))}.dark\:bg-\[\#0E1526\]\/95:is(.dark *){background-color:#0e1526f2}.dark\:bg-amber-400:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(251 191 36 / var(--tw-bg-opacity, 1))}.dark\:bg-amber-950\/60:is(.dark *){background-color:#451a0399}.dark\:bg-black\/60:is(.dark *){background-color:#0009}.dark\:bg-blue-400:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(96 165 250 / var(--tw-bg-opacity, 1))}.dark\:bg-blue-600:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.dark\:bg-blue-950\/40:is(.dark *){background-color:#17255466}.dark\:bg-blue-950\/60:is(.dark *){background-color:#17255499}.dark\:bg-emerald-400:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.dark\:bg-emerald-950\/50:is(.dark *){background-color:#022c2280}.dark\:bg-emerald-950\/60:is(.dark *){background-color:#022c2299}.dark\:bg-slate-700:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-800:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-800\/40:is(.dark *){background-color:#1e293b66}.dark\:bg-slate-800\/60:is(.dark *){background-color:#1e293b99}.dark\:bg-slate-800\/80:is(.dark *){background-color:#1e293bcc}.dark\:bg-slate-900:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.dark\:fill-slate-500:is(.dark *){fill:#64748b}.dark\:fill-slate-900:is(.dark *){fill:#0f172a}.dark\:stroke-blue-400:is(.dark *){stroke:#60a5fa}.dark\:text-\[\#F1F5F9\]:is(.dark *){--tw-text-opacity: 1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.dark\:text-amber-400:is(.dark *){--tw-text-opacity: 1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.dark\:text-blue-100:is(.dark *){--tw-text-opacity: 1;color:rgb(219 234 254 / var(--tw-text-opacity, 1))}.dark\:text-blue-400:is(.dark *){--tw-text-opacity: 1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.dark\:text-emerald-400:is(.dark *){--tw-text-opacity: 1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.dark\:text-slate-100:is(.dark *){--tw-text-opacity: 1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.dark\:text-slate-200:is(.dark *){--tw-text-opacity: 1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.dark\:text-slate-300:is(.dark *){--tw-text-opacity: 1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.dark\:text-slate-400:is(.dark *){--tw-text-opacity: 1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.dark\:text-slate-500:is(.dark *){--tw-text-opacity: 1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.dark\:text-slate-600:is(.dark *){--tw-text-opacity: 1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.dark\:text-slate-700:is(.dark *){--tw-text-opacity: 1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.dark\:text-white:is(.dark *){--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:hover\:border-slate-600:hover:is(.dark *){--tw-border-opacity: 1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.dark\:hover\:bg-blue-500:hover:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-slate-700:hover:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-slate-800:hover:is(.dark *){--tw-bg-opacity: 1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:hover\:text-blue-400:hover:is(.dark *){--tw-text-opacity: 1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.dark\:hover\:text-slate-200:hover:is(.dark *){--tw-text-opacity: 1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.dark\:hover\:text-white:hover:is(.dark *){--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media(min-width:640px){.sm\:col-span-1{grid-column:span 1 / span 1}.sm\:col-span-3{grid-column:span 3 / span 3}.sm\:flex{display:flex}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:gap-3{gap:.75rem}.sm\:self-auto{align-self:auto}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media(min-width:768px){.md\:inline{display:inline}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:justify-between{justify-content:space-between}}@media(min-width:1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(min-width:1280px){.xl\:flex{display:flex}}
+
+
+    /* CSS Variables for Dynamic Elements */
+    :root {
+      --ga-cutout: #FFFFFF;
+      --chart-grid: #E2E8F0;
+      --chart-health: #1E293B;
+    }
+    html.dark {
+      --ga-cutout: #0B0F19;
+      --chart-grid: #1E293B;
+      --chart-health: #60A5FA;
+    }
+    .ga-cutout {
+      fill: var(--ga-cutout);
+      transition: fill 0.25s ease;
+    }
+    .chart-grid-line {
+      stroke: var(--chart-grid);
+      transition: stroke 0.25s ease;
+    }
+    .chart-health-line {
+      stroke: var(--chart-health);
+      transition: stroke 0.25s ease;
+    }
+  
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased relative bg-[#F8FAFC] dark:bg-[#0B0F19] text-[#0F172A] dark:text-[#F1F5F9]">
+
+  <!-- Top Utility Bar (Clean GA Symbol, No Black Box, Light/Dark Mode Switcher) -->
+  <div class="bg-white/90 dark:bg-[#0B0F19]/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 px-4 sm:px-8 py-2 text-xs text-slate-600 dark:text-slate-400 flex items-center justify-between sticky top-0 z-40 transition-colors duration-200">
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
+        <!-- Standalone Official GA Vector Symbol (Cutout adapts dynamically to theme) -->
+        <svg viewBox="0 0 1800 1800" class="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="topGadsGrad" x1="1152.72" y1="1615.65" x2="485.86" y2="285.63" gradientUnits="userSpaceOnUse">
+              <stop offset="0.01" stop-color="#2296D3"/>
+              <stop offset="1" stop-color="#1A4895"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#topGadsGrad)" d="M983.74,36,916,164,796.68,389.45c-83.85-29.24-176-28.56-259.15,5.2C432,437.47,353.93,528.31,322.59,637.27q-4.41,17.49-7.2,35.59a365.41,365.41,0,0,0-7.4,73.35c0,119.12,57.26,224.85,145.75,291.21L317.57,1294.71l-19,36H1721.11Z"/>
+          <path class="ga-cutout" d="M609.41,657V871.47l392.42,0c-8.62,31.62-32.93,103.69-100.48,163-102.12,89.73-225.52,82.24-254,79.62C495.56,1100.18,338,977.53,313.67,795.61,292.6,638.12,377,478.39,524.91,412.13c127.17-57,278.6-34.68,388.9,57.41l167-170.68c-40.3-38.64-104.91-90.09-195.19-121.8C635.68,89.26,297,190.75,150.1,450c-115.57,204-60.65,414.31-49.83,452.81,55.59,197.95,194.44,303.47,234,331.49C465,1327,598.8,1343.54,670.07,1345.92c53.95,1.79,184.55,4.42,317.4-75.83,202.68-122.43,248-339.55,256.74-381.32,20.25-96.95,12.38-179.63,3.25-231.82Z"/>
+        </svg>
+        <span class="font-semibold text-slate-900 dark:text-white tracking-tight">GA Web Telemetry</span>
+      </div>
+      <span class="hidden md:inline text-slate-300 dark:text-slate-700">/</span>
+      <span class="hidden md:inline text-slate-500 dark:text-slate-400">
+        Target: <code class="font-mono text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/80 px-1.5 py-0.5 rounded text-[11px] border border-slate-200 dark:border-slate-700">https://cpvia.com</code>
+      </span>
+    </div>
+
+    <!-- Right Controls: Status, Timestamp, & Light/Dark Mode Switcher -->
+    <div class="flex items-center gap-2.5 sm:gap-3 text-xs">
+      <span class="text-slate-500 dark:text-slate-400 hidden sm:flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Last checked: <span id="syncTimestamp" class="font-medium text-slate-700 dark:text-slate-200">10:58 AM</span>
+      </span>
+      
+      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 font-medium text-[11px] border border-emerald-200 dark:border-emerald-800 shadow-xs">
+        <svg class="w-3 h-3 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        HTTP 200 OK
+      </span>
+
+      <!-- Custom Capsule Theme Switch (Coral Sun / Blue Crescent Moon) -->
+      <button 
+        id="themeToggleBtn" 
+        onclick="toggleTheme()" 
+        class="theme-switch-track focus:outline-none focus:ring-2 focus:ring-blue-500/40" 
+        title="Toggle Light / Dark mode" 
+        aria-label="Toggle Light and Dark Mode"
+        role="switch"
+        aria-checked="false">
+        <div class="theme-switch-thumb">
+          <!-- Light: Vibrant Coral-Red Sun Sphere -->
+          <div class="theme-switch-sun"></div>
+          <!-- Dark: Radiant Blue Crescent Moon -->
+          <div class="theme-switch-moon">
+            <svg viewBox="0 0 24 24" class="w-[18px] h-[18px] text-[#58A6FF] filter drop-shadow-[0_0_5px_rgba(88,166,255,0.6)]" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Header with Dynamic Scroll Elevation -->
+  <header id="mainHeader" class="bg-white dark:bg-[#0E1526] border-b border-slate-200 dark:border-slate-800 sticky top-[37px] z-30 shadow-xs py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      
+      <!-- Client Identity — Clean with NO icon before it -->
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-100 dark:border-blue-900/60">
+            Client Performance View
+          </span>
+          <span class="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
+            Read-Only Live
+          </span>
+        </div>
+        <div class="flex items-center gap-2 mt-1">
+          <h1 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+            CPVIA <span class="text-slate-300 dark:text-slate-700 font-normal">|</span> <span class="text-slate-600 dark:text-slate-400 text-base sm:text-lg font-normal">Advanced Statistical Programming</span>
+          </h1>
+          <a href="https://cpvia.com/" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 p-1 transition-colors" title="Open live site">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Action Toolbar -->
+      <div class="flex items-center flex-wrap gap-2.5">
+        
+        <!-- Scrolled Quick-Stats Pill -->
+        <div id="scrolledPill" class="hidden xl:flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-300 opacity-0 -translate-y-2 transition-all duration-300">
+          <span class="text-emerald-700 dark:text-emerald-400 font-bold">100% Uptime</span>
+          <span class="text-slate-300 dark:text-slate-600">&bull;</span>
+          <span id="miniPerfScore" class="text-slate-800 dark:text-slate-200 font-bold">82/100 Perf</span>
+          <span class="text-slate-300 dark:text-slate-600">&bull;</span>
+          <span class="text-blue-700 dark:text-blue-400 font-medium">57d SSL</span>
+        </div>
+
+        <!-- Timeframe Selector -->
+        <div class="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-400 shadow-inner">
+          <button onclick="setTimeRange('1h', this)" class="tf-btn px-2.5 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white">1H</button>
+          <button onclick="setTimeRange('24h', this)" class="tf-btn px-2.5 py-1 rounded-lg transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-sm">24H</button>
+          <button onclick="setTimeRange('7d', this)" class="tf-btn px-2.5 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white">7D</button>
+          <button onclick="setTimeRange('30d', this)" class="tf-btn px-2.5 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white">30D</button>
+        </div>
+
+        <!-- Refresh Button -->
+        <button id="refreshBtn" onclick="triggerRefresh()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 text-xs font-medium text-slate-700 dark:text-slate-200 shadow-sm transition-all active:scale-95">
+          <svg id="refreshIcon" class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400 transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+          <span id="refreshText">Refresh</span>
+        </button>
+
+        <!-- Share Button -->
+        <button onclick="openShareModal()" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium text-xs shadow-md transition-all active:scale-95">
+          <svg class="w-3.5 h-3.5 text-slate-300 dark:text-blue-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <span>Share Dashboard</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Subnav -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center gap-8 border-t border-slate-100 dark:border-slate-800 text-xs mt-3">
+      <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn py-2.5 font-semibold border-b-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 transition-all flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Overview & Web Vitals
+      </button>
+      <button onclick="switchTab('diagnostics')" id="tab-diagnostics" class="tab-btn py-2.5 font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        Edge Response Time & Nodes
+      </button>
+      <button onclick="switchTab('security')" id="tab-security" class="tab-btn py-2.5 font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        Domain, SSL & Security
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-7 space-y-7">
+
+    <!-- TAB 1: OVERVIEW -->
+    <div id="content-overview" class="space-y-7">
+      
+      <!-- ROW 1: CORE RELIABILITY & PAGE SPEED / CORE WEB VITALS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Card 1: Core Website Reliability (5 cols) -->
+        <div class="lg:col-span-5 elevated-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <!-- 3D Isometric Server Icon -->
+                <div class="w-12 h-12 rounded-xl icon-pedestal flex items-center justify-center p-1 shrink-0 transition-transform duration-300 hover:scale-105">
+                  <svg viewBox="0 0 64 64" class="w-10 h-10" fill="none">
+                    <polygon points="32,6 52,16 32,26 12,16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="0.75" />
+                    <polygon points="12,16 32,26 32,54 12,44" fill="#1E293B" />
+                    <polygon points="32,26 52,16 52,44 32,54" fill="#0F172A" />
+                    <circle cx="20" cy="27" r="1.5" fill="#10B981" />
+                    <circle cx="20" cy="35" r="1.5" fill="#10B981" />
+                    <circle cx="20" cy="43" r="1.5" fill="#10B981" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Core Website Reliability</h2>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Autonomous edge monitoring</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 shadow-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 animate-pulse"></span>
+                ONLINE
+              </span>
+            </div>
+
+            <div class="mt-2">
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight font-mono">100%</span>
+                <span class="text-xs font-semibold uppercase text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-100 dark:border-emerald-800">
+                  30-Day Uptime
+                </span>
+              </div>
+              <p class="mt-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Website is performing reliably with an average response time of <strong class="text-slate-900 dark:text-white font-mono">7040ms</strong> across global edge monitoring nodes.
+              </p>
+            </div>
+
+            <!-- Latency Breakdown Bar -->
+            <div class="mt-5 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-600 dark:text-slate-400 font-medium">Average Edge Latency:</span>
+                <span class="font-mono font-bold text-amber-700 dark:text-amber-400">7,040 ms</span>
+              </div>
+              <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden flex shadow-inner">
+                <div class="bg-emerald-500 h-full w-[10%]" title="DNS & SSL: 120ms"></div>
+                <div class="bg-blue-500 h-full w-[15%]" title="Network Transit: 180ms"></div>
+                <div class="bg-amber-500 h-full w-[75%]" title="Server TTFB: 6740ms"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+                <span>DNS/TLS: 120ms</span>
+                <span>Transit: 180ms</span>
+                <span class="text-amber-700 dark:text-amber-400 font-medium">Server TTFB: 6.74s</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+              Last checked: 10:58 AM
+            </span>
+            <span class="font-mono text-slate-600 dark:text-slate-300 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700">HTTP 200</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Page Speed & Core Web Vitals (7 cols) -->
+        <div class="lg:col-span-7 elevated-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+              <div class="flex items-center gap-3">
+                <!-- 3D Speed Orb -->
+                <div class="w-12 h-12 rounded-xl icon-pedestal flex items-center justify-center p-1 shrink-0 transition-transform duration-300 hover:scale-105">
+                  <svg viewBox="0 0 64 64" class="w-10 h-10" fill="none">
+                    <circle cx="32" cy="30" r="20" fill="#F59E0B" />
+                    <polygon points="34,14 22,31 31,31 28,44 42,27 33,27" fill="#FFFFFF" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Page Speed & Core Web Vitals</h2>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Google Lighthouse real-user loading experience metrics</p>
+                </div>
+              </div>
+
+              <!-- Desktop / Mobile Switcher -->
+              <div class="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-400 self-start sm:self-auto shadow-inner">
+                <button id="devBtn-desktop" onclick="setDevice('desktop')" class="px-3 py-1 rounded-lg transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-sm flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                  <span>Desktop</span>
+                </button>
+                <button id="devBtn-mobile" onclick="setDevice('mobile')" class="px-3 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  <span>Mobile (4G)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Vitals Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-center">
+              
+              <!-- Overall Score Box -->
+              <div class="sm:col-span-1 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 text-center flex flex-col items-center justify-center shadow-xs">
+                <div id="perfScoreValue" class="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">82</div>
+                <span class="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider mt-0.5">Good</span>
+                <span class="text-[10px] text-slate-500 dark:text-slate-400">Performance Score</span>
+              </div>
+
+              <!-- 3 Metric Cards -->
+              <div class="sm:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                
+                <!-- LCP -->
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 shadow-xs">
+                  <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase">LCP (Load Time)</div>
+                  <div id="lcpValue" class="text-xl font-bold font-mono text-slate-900 dark:text-white mt-1">0.82s</div>
+                  <div class="mt-1 flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-400 font-medium">&#10003; Good (&lt; 2.5s)</div>
+                </div>
+
+                <!-- INP -->
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 shadow-xs">
+                  <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase">INP (Response)</div>
+                  <div id="inpValue" class="text-xl font-bold font-mono text-slate-900 dark:text-white mt-1">32ms</div>
+                  <div class="mt-1 flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-400 font-medium">&#10003; Fast UI Interaction</div>
+                </div>
+
+                <!-- CLS -->
+                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 shadow-xs">
+                  <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase">CLS (Visual Shift)</div>
+                  <div id="clsValue" class="text-xl font-bold font-mono text-slate-900 dark:text-white mt-1">0.04</div>
+                  <div class="mt-1 flex items-center gap-1 text-[11px] text-emerald-700 dark:text-emerald-400 font-medium">&#10003; Stable Visuals</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+              <svg class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              All 3 core metrics meet Google user experience benchmarks.
+            </span>
+            <span id="fcpValue" class="font-mono text-slate-600 dark:text-slate-300">FCP: 0.65s</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 2: 4 PILLARS - SSL, DOMAIN, SEO, MALWARE -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- SSL -->
+        <div class="elevated-card rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg icon-pedestal flex items-center justify-center p-1 shrink-0">
+              <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none">
+                <path d="M 22,26 V 17 C 22,11.5 26.5,7 32,7 C 37.5,7 42,11.5 42,17 V 26" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+                <rect x="15" y="24" width="34" height="26" rx="6" fill="#059669" />
+                <circle cx="32" cy="34" r="3" fill="#064E3B" />
+              </svg>
+            </div>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800">SECURE</span>
+          </div>
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">SSL Encryption</div>
+          <div class="text-2xl font-bold font-mono text-slate-900 dark:text-white mt-1">57 Days Left</div>
+          <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+            <div class="bg-emerald-600 h-full w-[63%]"></div>
+          </div>
+          <div class="mt-3.5 pt-2.5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex justify-between">
+            <span>Issuer:</span>
+            <span class="font-medium text-slate-700 dark:text-slate-200">Let's Encrypt</span>
+          </div>
+        </div>
+
+        <!-- Domain -->
+        <div class="elevated-card rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg icon-pedestal flex items-center justify-center p-1 shrink-0">
+              <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none">
+                <circle cx="32" cy="31" r="18" fill="#2563EB" />
+                <ellipse cx="32" cy="32" rx="24" ry="8" stroke="#60A5FA" stroke-width="2" transform="rotate(-20 32 32)" />
+              </svg>
+            </div>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-400 border border-blue-100 dark:border-blue-900/60">ACTIVE</span>
+          </div>
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Domain Registration</div>
+          <div class="text-2xl font-bold font-mono text-slate-900 dark:text-white mt-1">90 Days Left</div>
+          <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+            <div class="bg-blue-600 h-full w-[75%]"></div>
+          </div>
+          <div class="mt-3.5 pt-2.5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex justify-between">
+            <span>Registrar:</span>
+            <span class="font-medium text-slate-700 dark:text-slate-200">GoDaddy.com, LLC</span>
+          </div>
+        </div>
+
+        <!-- SEO -->
+        <div class="elevated-card rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg icon-pedestal flex items-center justify-center p-1 shrink-0">
+              <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none">
+                <rect x="14" y="12" width="24" height="30" rx="3" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+                <circle cx="36" cy="27" r="12" stroke="#D97706" stroke-width="3" fill="#FEF3C7" fill-opacity="0.4" />
+                <path d="M 44,35 L 53,44" stroke="#78350F" stroke-width="4" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold font-mono bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">53/100</span>
+          </div>
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">SEO Visibility</div>
+          <div class="text-2xl font-bold font-mono text-slate-900 dark:text-white mt-1">Standard</div>
+          <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+            <div class="bg-amber-500 h-full w-[53%]"></div>
+          </div>
+          <div class="mt-3.5 pt-2.5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex justify-between">
+            <span>Audit:</span>
+            <span class="font-medium text-emerald-700 dark:text-emerald-400">0 Broken links</span>
+          </div>
+        </div>
+
+        <!-- Malware -->
+        <div class="elevated-card rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg icon-pedestal flex items-center justify-center p-1 shrink-0">
+              <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none">
+                <path d="M 32,8 L 16,14 C 16,30 23,43 32,49 C 41,43 48,30 48,14 Z" fill="#059669" />
+                <path d="M 24,28 L 29,33 L 40,21" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800">CLEAN</span>
+          </div>
+          <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Malware & Integrity</div>
+          <div class="text-2xl font-bold font-mono text-slate-900 dark:text-white mt-1">0 Threats</div>
+          <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+            <div class="bg-emerald-600 h-full w-[65%]"></div>
+          </div>
+          <div class="mt-3.5 pt-2.5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex justify-between">
+            <span>Security Score:</span>
+            <span class="font-medium text-slate-700 dark:text-slate-300 font-mono">65/100</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 3: TELEMETRY CURVE & AUDIT PILLARS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Telemetry Reliability & Health Curve (8 cols) -->
+        <div class="lg:col-span-8 elevated-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h2 class="text-sm font-bold text-slate-900 dark:text-white">Telemetry Reliability & Health Curve</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Continuous tracking of overall site health, performance, and SEO scores</p>
+              </div>
+              <span class="text-[11px] font-semibold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-3 py-1 rounded-lg border border-blue-200 dark:border-blue-900/60">
+                Live Trend Analysis
+              </span>
+            </div>
+
+            <div class="flex items-center gap-5 text-xs text-slate-600 dark:text-slate-400 mb-3">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-800 dark:bg-blue-400 inline-block shadow-xs"></span>
+                <span>Overall Health Index</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 dark:bg-emerald-400 inline-block shadow-xs"></span>
+                <span>Performance Score</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 dark:bg-amber-400 inline-block shadow-xs"></span>
+                <span>SEO Score</span>
+              </div>
+            </div>
+
+            <!-- Vector SVG Chart -->
+            <div class="w-full bg-slate-50/70 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200/80 dark:border-slate-800 shadow-inner">
+              <svg viewBox="0 0 840 200" class="w-full h-auto">
+                <line x1="40" y1="20" x2="800" y2="20" class="chart-grid-line" stroke-dasharray="3 3"/>
+                <line x1="40" y1="65" x2="800" y2="65" class="chart-grid-line" stroke-dasharray="3 3"/>
+                <line x1="40" y1="110" x2="800" y2="110" class="chart-grid-line" stroke-dasharray="3 3"/>
+                <line x1="40" y1="155" x2="800" y2="155" class="chart-grid-line" stroke-dasharray="3 3"/>
+                <line x1="40" y1="190" x2="800" y2="190" class="chart-grid-line"/>
+
+                <text x="32" y="24" text-anchor="end" fill="#94A3B8" font-size="10" font-family="monospace">100</text>
+                <text x="32" y="69" text-anchor="end" fill="#94A3B8" font-size="10" font-family="monospace">75</text>
+                <text x="32" y="114" text-anchor="end" fill="#94A3B8" font-size="10" font-family="monospace">50</text>
+                <text x="32" y="159" text-anchor="end" fill="#94A3B8" font-size="10" font-family="monospace">25</text>
+
+                <!-- SEO Line (Amber) -->
+                <path d="M 40,110 L 800,110" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="4 4" />
+
+                <!-- Performance Line (Emerald) -->
+                <path d="M 40,75 L 94,72 L 148,82 L 202,70 L 257,77 L 311,65 L 365,79 L 419,72 L 474,68 L 528,73 L 582,67 L 637,65 L 691,75 L 745,70 L 800,70" fill="none" stroke="#10B981" stroke-width="2.5" />
+
+                <!-- Overall Health Line (Adapts cleanly via CSS variable) -->
+                <path d="M 40,65 L 94,60 L 148,68 L 202,58 L 257,62 L 311,52 L 365,63 L 419,56 L 474,54 L 528,58 L 582,53 L 637,50 L 691,58 L 745,54 L 800,52" fill="none" class="chart-health-line" stroke-width="2.5" />
+
+                <!-- Timestamps -->
+                <text x="40" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">00:45</text>
+                <text x="148" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">03:02</text>
+                <text x="257" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">05:13</text>
+                <text x="365" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">08:31</text>
+                <text x="474" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">10:41</text>
+                <text x="582" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">12:51</text>
+                <text x="691" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">15:08</text>
+                <text x="800" y="198" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="monospace">16:58</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span>Continuous trailing 24h data</span>
+            <span class="font-mono">Sync interval: 60m</span>
+          </div>
+        </div>
+
+        <!-- Audit Pillar Breakdown (4 cols) -->
+        <div class="lg:col-span-4 elevated-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h2 class="text-sm font-bold text-slate-900 dark:text-white">Audit Pillar Breakdown</h2>
+              <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">100-PT SCALE</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Aggregated health index across core verticals</p>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="font-medium text-slate-700 dark:text-slate-300">Performance</span>
+                  <span class="font-mono font-bold text-amber-700 dark:text-amber-400">70 / 100</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
+                  <div class="bg-gradient-to-r from-amber-600 to-amber-500 h-full w-[70%] rounded-full"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="font-medium text-slate-700 dark:text-slate-300">SEO Health</span>
+                  <span class="font-mono font-bold text-amber-700 dark:text-amber-400">53 / 100</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
+                  <div class="bg-gradient-to-r from-amber-600 to-amber-500 h-full w-[53%] rounded-full"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="font-medium text-slate-700 dark:text-slate-300">Security</span>
+                  <span class="font-mono font-bold text-blue-700 dark:text-blue-400">65 / 100</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
+                  <div class="bg-gradient-to-r from-blue-700 to-blue-500 h-full w-[65%] rounded-full"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="font-medium text-slate-700 dark:text-slate-300">Availability</span>
+                  <span class="font-mono font-bold text-emerald-700 dark:text-emerald-400">100 / 100</span>
+                </div>
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden shadow-inner">
+                  <div class="bg-gradient-to-r from-emerald-600 to-emerald-500 h-full w-[100%] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 shadow-xs">
+                <div class="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400">AVERAGE SPEED</div>
+                <div class="text-lg font-bold font-mono text-slate-900 dark:text-white mt-0.5">7040ms</div>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/90 dark:border-slate-700/60 shadow-xs">
+                <div class="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400">OVERALL RELIABILITY</div>
+                <div class="text-lg font-bold font-mono text-emerald-700 dark:text-emerald-400 mt-0.5">100%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <span class="text-emerald-700 dark:text-emerald-400 font-medium">&#10003; All systems nominal</span>
+            <span>SLA Met</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 2: DIAGNOSTICS -->
+    <div id="content-diagnostics" class="hidden space-y-6">
+      <div class="elevated-card rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              Edge Nodes & Global Latency Breakdown
+            </h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Probing round-trip latency and Time To First Byte (TTFB) from 6 distributed monitoring regions.</p>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 shadow-xs">All Probes Healthy</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-2.5 shadow-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-slate-800 dark:text-slate-100">US East (N. Virginia)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white dark:bg-slate-700 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-slate-600 shadow-xs">Online</span>
+            </div>
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400">Node: edge-iad-01</div>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200/80 dark:border-slate-700 text-xs">
+              <div><span class="text-[10px] uppercase text-slate-500 dark:text-slate-400">Ping</span><div class="font-mono font-semibold text-slate-800 dark:text-slate-100">84ms</div></div>
+              <div><span class="text-[10px] uppercase text-slate-500 dark:text-slate-400">TTFB</span><div class="font-mono font-semibold text-amber-700 dark:text-amber-400">6,810ms</div></div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-2.5 shadow-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-slate-800 dark:text-slate-100">US West (Oregon)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white dark:bg-slate-700 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-slate-600 shadow-xs">Online</span>
+            </div>
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400">Node: edge-pdx-01</div>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200/80 dark:border-slate-700 text-xs">
+              <div><span class="text-[10px] uppercase text-slate-500 dark:text-slate-400">Ping</span><div class="font-mono font-semibold text-slate-800 dark:text-slate-100">112ms</div></div>
+              <div><span class="text-[10px] uppercase text-slate-500 dark:text-slate-400">TTFB</span><div class="font-mono font-semibold text-amber-700 dark:text-amber-400">6,920ms</div></div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 space-y-2.5 shadow-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-slate-800 dark:text-slate-100">Europe (Frankfurt)</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white dark:bg-slate-700 text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-slate-600 shadow-xs">Online</span>
+            </div>
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400">Node: edge-fra-01</div>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200/80 dark:border-slate-700 text-xs">
+              <div><span class="text-[10px] uppercase text-slate-500 dark:text-slate-400">Ping</span><div class="font-mono font-semibold text-slate-800 dark:text-slate-100">142ms</div></div>
+              <div><span class="text-[10px] uppercase text-slate-500 dark:text-slate-400">TTFB</span><div class="font-mono font-semibold text-amber-700 dark:text-amber-400">7,150ms</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 flex items-start gap-3 shadow-xs">
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div class="text-xs text-slate-700 dark:text-slate-300 space-y-1">
+            <div class="font-bold text-slate-900 dark:text-white">Engineering Performance Insight:</div>
+            <p class="leading-relaxed">The 7,040ms average response time reflects un-cached origin backend processing (TTFB ~6.8s) on cpvia.com. Implementing static asset edge caching and server-side response caching via CDN can reduce global response times to under <strong>200ms</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SECURITY -->
+    <div id="content-security" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="elevated-card rounded-2xl p-6 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg icon-pedestal flex items-center justify-center p-1 shrink-0">
+            <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none"><rect x="15" y="24" width="34" height="26" rx="6" fill="#059669" /><circle cx="32" cy="34" r="3" fill="#064E3B" /></svg>
+          </div>
+          <h2 class="text-base font-bold text-slate-900 dark:text-white">TLS / SSL Certificate Information</h2>
+        </div>
+        <div class="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Common Name</span><span class="font-mono font-medium text-slate-900 dark:text-white">cpvia.com</span></div>
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Certificate Authority</span><span class="font-medium text-slate-900 dark:text-white">Let's Encrypt</span></div>
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Cipher Protocol</span><span class="font-mono text-slate-900 dark:text-white">TLS 1.3 / HTTP/2</span></div>
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Days to Expiration</span><span class="font-mono font-bold text-emerald-700 dark:text-emerald-400">57 Days Remaining</span></div>
+        </div>
+      </div>
+
+      <div class="elevated-card rounded-2xl p-6 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg icon-pedestal flex items-center justify-center p-1 shrink-0">
+            <svg viewBox="0 0 64 64" class="w-8 h-8" fill="none"><path d="M 32,8 L 16,14 C 16,30 23,43 32,49 C 41,43 48,30 48,14 Z" fill="#059669" /></svg>
+          </div>
+          <h2 class="text-base font-bold text-slate-900 dark:text-white">Domain & Integrity Scan</h2>
+        </div>
+        <div class="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Google Safe Browsing</span><span class="text-emerald-700 dark:text-emerald-400 font-semibold flex items-center gap-1">&#10003; Clean (0 Threats)</span></div>
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Registrar</span><span class="font-medium text-slate-900 dark:text-white">GoDaddy.com, LLC (90 Days left)</span></div>
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">SEO Health Status</span><span class="font-medium text-slate-900 dark:text-white">Standard Visibility (53/100)</span></div>
+          <div class="py-2.5 flex justify-between"><span class="text-slate-500 dark:text-slate-400">Broken Link Audit</span><span class="font-medium text-emerald-700 dark:text-emerald-400">0 broken links detected</span></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer with Clean Standalone GA Symbol (No Black Box) -->
+  <footer class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0B0F19] py-4 px-4 sm:px-8 transition-colors duration-200">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+      <div class="flex items-center gap-2">
+        <svg viewBox="0 0 1800 1800" class="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#2296D3" d="M983.74,36,916,164,796.68,389.45c-83.85-29.24-176-28.56-259.15,5.2C432,437.47,353.93,528.31,322.59,637.27q-4.41,17.49-7.2,35.59a365.41,365.41,0,0,0-7.4,73.35c0,119.12,57.26,224.85,145.75,291.21L317.57,1294.71l-19,36H1721.11Z"/>
+          <path class="ga-cutout" d="M609.41,657V871.47l392.42,0c-8.62,31.62-32.93,103.69-100.48,163-102.12,89.73-225.52,82.24-254,79.62C495.56,1100.18,338,977.53,313.67,795.61,292.6,638.12,377,478.39,524.91,412.13c127.17-57,278.6-34.68,388.9,57.41l167-170.68c-40.3-38.64-104.91-90.09-195.19-121.8C635.68,89.26,297,190.75,150.1,450c-115.57,204-60.65,414.31-49.83,452.81,55.59,197.95,194.44,303.47,234,331.49C465,1327,598.8,1343.54,670.07,1345.92c53.95,1.79,184.55,4.42,317.4-75.83,202.68-122.43,248-339.55,256.74-381.32,20.25-96.95,12.38-179.63,3.25-231.82Z"/>
+        </svg>
+        <span class="font-semibold text-slate-700 dark:text-slate-200">GA Web Telemetry</span>
+        <span>&bull;</span>
+        <span>Continuous Website Performance & SRE Monitoring</span>
+      </div>
+      <div>
+        Monitored on behalf of <a href="https://cpvia.com/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-mono">https://cpvia.com/</a>. Synchronized 24/7 every hour.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="scrollTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-6 right-6 z-40 p-2.5 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/90 dark:border-slate-700 shadow-lg hover:shadow-xl hover:bg-slate-50 dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none flex items-center justify-center" title="Scroll to top">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Share Modal -->
+  <div id="shareModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 dark:bg-black/60 backdrop-blur-xs">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Share Client Dashboard</h3>
+        </div>
+        <button onclick="closeShareModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-lg p-1">&times;</button>
+      </div>
+
+      <p class="text-xs text-slate-600 dark:text-slate-400">Generate a secure, read-only preview link for CPVIA stakeholders or export this report.</p>
+
+      <div class="space-y-1.5">
+        <label class="text-[11px] font-semibold uppercase text-slate-500 dark:text-slate-400">Secure Client Link</label>
+        <div class="flex items-center gap-2">
+          <input id="shareInput" type="text" readonly value="https://telemetry.ga-cloud.io/client/cpvia-portal?token=live_auth_981a2f" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-xs font-mono text-slate-800 dark:text-slate-200 select-all focus:outline-none" />
+          <button onclick="copyShareLink()" id="copyBtn" class="px-3 py-2 rounded-lg bg-slate-900 dark:bg-blue-600 text-white font-medium text-xs hover:bg-slate-800 dark:hover:bg-blue-500 transition-colors shrink-0">Copy</button>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-2">
+        <button onclick="closeShareModal()" class="px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">Close</button>
+        <button onclick="window.print(); closeShareModal()" class="px-3.5 py-1.5 rounded-lg text-xs font-medium bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1.5 shadow-xs">
+          <span>Print / Save as PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Client-side Script -->
+  <script>
+    // Theme Management: Light & Dark Mode
+    function initTheme() {
+      const savedTheme = localStorage.getItem('cpvia-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const activeTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+      applyTheme(activeTheme);
+    }
+
+    function applyTheme(theme) {
+      const html = document.documentElement;
+      const toggleBtn = document.getElementById('themeToggleBtn');
+
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        html.classList.remove('light');
+        if (toggleBtn) {
+          toggleBtn.setAttribute('aria-checked', 'true');
+        }
+      } else {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        if (toggleBtn) {
+          toggleBtn.setAttribute('aria-checked', 'false');
+        }
+      }
+      localStorage.setItem('cpvia-theme', theme);
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      applyTheme(isDark ? 'light' : 'dark');
+    }
+
+    // Initialize Theme immediately
+    initTheme();
+
+    // Tab switching
+    function switchTab(tabId) {
+      ['overview', 'diagnostics', 'security'].forEach(id => {
+        const content = document.getElementById('content-' + id);
+        const tab = document.getElementById('tab-' + id);
+        if (id === tabId) {
+          content.classList.remove('hidden');
+          tab.className = 'tab-btn py-2.5 font-semibold border-b-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 transition-all flex items-center gap-1.5';
+        } else {
+          content.classList.add('hidden');
+          tab.className = 'tab-btn py-2.5 font-semibold border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-all flex items-center gap-1.5';
+        }
+      });
+    }
+
+    // Device switcher (Desktop vs Mobile)
+    function setDevice(device) {
+      const desktopBtn = document.getElementById('devBtn-desktop');
+      const mobileBtn = document.getElementById('devBtn-mobile');
+      const perfScore = document.getElementById('perfScoreValue');
+      const miniPerfScore = document.getElementById('miniPerfScore');
+      const lcp = document.getElementById('lcpValue');
+      const inp = document.getElementById('inpValue');
+      const cls = document.getElementById('clsValue');
+      const fcp = document.getElementById('fcpValue');
+
+      if (device === 'desktop') {
+        desktopBtn.className = 'px-3 py-1 rounded-lg transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-sm flex items-center gap-1.5';
+        mobileBtn.className = 'px-3 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5';
+        perfScore.textContent = '82';
+        miniPerfScore.textContent = '82/100 Perf';
+        lcp.textContent = '0.82s';
+        inp.textContent = '32ms';
+        cls.textContent = '0.04';
+        fcp.textContent = 'FCP: 0.65s';
+      } else {
+        mobileBtn.className = 'px-3 py-1 rounded-lg transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-sm flex items-center gap-1.5';
+        desktopBtn.className = 'px-3 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5';
+        perfScore.textContent = '70';
+        miniPerfScore.textContent = '70/100 Perf';
+        lcp.textContent = '0.99s';
+        inp.textContent = '45ms';
+        cls.textContent = '0.06';
+        fcp.textContent = 'FCP: 0.88s';
+      }
+    }
+
+    // Timeframe selector
+    function setTimeRange(range, btn) {
+      document.querySelectorAll('.tf-btn').forEach(b => {
+        b.className = 'tf-btn px-2.5 py-1 rounded-lg transition-all hover:text-slate-900 dark:hover:text-white';
+      });
+      btn.className = 'tf-btn px-2.5 py-1 rounded-lg transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-sm';
+    }
+
+    // Refresh simulation
+    function triggerRefresh() {
+      const icon = document.getElementById('refreshIcon');
+      const text = document.getElementById('refreshText');
+      const timestamp = document.getElementById('syncTimestamp');
+      
+      icon.classList.add('animate-spin');
+      text.textContent = 'Syncing...';
+
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        text.textContent = 'Refresh';
+        const now = new Date();
+        timestamp.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }, 650);
+    }
+
+    // Scroll listener for sticky header elevation & back to top
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('mainHeader');
+      const pill = document.getElementById('scrolledPill');
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      const scrollY = window.scrollY;
+
+      if (scrollY > 30) {
+        header.classList.add('shadow-md', 'py-3');
+        header.classList.remove('py-4');
+        pill.classList.remove('opacity-0', '-translate-y-2');
+        pill.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        header.classList.remove('shadow-md', 'py-3');
+        header.classList.add('py-4');
+        pill.classList.add('opacity-0', '-translate-y-2');
+        pill.classList.remove('opacity-100', 'translate-y-0');
+      }
+
+      if (scrollY > 250) {
+        scrollTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+        scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+      }
+    }, { passive: true });
+
+    // Share modal
+    function openShareModal() {
+      document.getElementById('shareModal').classList.remove('hidden');
+    }
+    function closeShareModal() {
+      document.getElementById('shareModal').classList.add('hidden');
+    }
+    function copyShareLink() {
+      const input = document.getElementById('shareInput');
+      input.select();
+      navigator.clipboard?.writeText(input.value);
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+</body>
+</html>

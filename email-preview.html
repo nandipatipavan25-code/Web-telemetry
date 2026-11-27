@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA Web Telemetry — Email Template Tester (Light &amp; Dark Theme)</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+
+  <!-- Google Fonts: Montserrat & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    }
+    
+    /* Attached Image Custom Toggle Switch */
+    .theme-switch-track {
+      width: 52px;
+      height: 28px;
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      background-color: #DDE1E6;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+    }
+    html.dark .theme-switch-track {
+      background-color: #2F333A;
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    .theme-switch-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 9999px;
+      position: absolute;
+      top: 2px;
+      left: 3px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    html.dark .theme-switch-thumb {
+      transform: translateX(24px);
+    }
+    .theme-switch-sun {
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 35% 35%, #FF6E4A 0%, #FF4422 65%, #DF2808 100%);
+      box-shadow: 0 1px 3px rgba(223, 40, 8, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+      transition: opacity 0.2s ease, transform 0.25s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+    html.dark .theme-switch-sun {
+      opacity: 0;
+      transform: scale(0.5);
+      pointer-events: none;
+    }
+    .theme-switch-moon {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease, transform 0.25s ease;
+      opacity: 0;
+      transform: scale(0.5);
+      pointer-events: none;
+    }
+    html.dark .theme-switch-moon {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    /* Embedded email iframe container */
+    .email-frame {
+      border: none;
+      width: 100%;
+      min-height: 1100px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-100 dark:bg-[#070A10] text-slate-800 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- Top Control Bar -->
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-[#0B0F19]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 sm:px-8 py-3 shadow-xs">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      
+      <!-- Brand & Title -->
+      <div class="flex items-center gap-3">
+        <svg viewBox="0 0 1800 1800" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="prevGrad" x1="1152.72" y1="1615.65" x2="485.86" y2="285.63" gradientUnits="userSpaceOnUse">
+              <stop offset="0.01" stop-color="#2296D3"/>
+              <stop offset="1" stop-color="#1A4895"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#prevGrad)" d="M983.74,36,916,164,796.68,389.45c-83.85-29.24-176-28.56-259.15,5.2C432,437.47,353.93,528.31,322.59,637.27q-4.41,17.49-7.2,35.59a365.41,365.41,0,0,0-7.4,73.35c0,119.12,57.26,224.85,145.75,291.21L317.57,1294.71l-19,36H1721.11Z"/>
+          <path fill="#FFFFFF" d="M609.41,657V871.47l392.42,0c-8.62,31.62-32.93,103.69-100.48,163-102.12,89.73-225.52,82.24-254,79.62C495.56,1100.18,338,977.53,313.67,795.61,292.6,638.12,377,478.39,524.91,412.13c127.17-57,278.6-34.68,388.9,57.41l167-170.68c-40.3-38.64-104.91-90.09-195.19-121.8C635.68,89.26,297,190.75,150.1,450c-115.57,204-60.65,414.31-49.83,452.81,55.59,197.95,194.44,303.47,234,331.49C465,1327,598.8,1343.54,670.07,1345.92c53.95,1.79,184.55,4.42,317.4-75.83,202.68-122.43,248-339.55,256.74-381.32,20.25-96.95,12.38-179.63,3.25-231.82Z"/>
+        </svg>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-sm font-bold tracking-tight text-slate-900 dark:text-white">Email Neutral Redesign Previewer</h1>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/70 dark:text-emerald-400">
+              Zero White-Box Glare
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Testing universal email fidelity across Light &amp; Dark themes</p>
+        </div>
+      </div>
+
+      <!-- Actions & Theme Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- View Mode: Single vs Side-by-Side -->
+        <div class="inline-flex rounded-lg bg-slate-200 dark:bg-slate-800 p-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+          <button onclick="setViewMode('single')" id="btn-single" class="px-3 py-1 rounded-md transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-xs">
+            Single View
+          </button>
+          <button onclick="setViewMode('compare')" id="btn-compare" class="px-3 py-1 rounded-md transition-all hover:text-slate-900 dark:hover:text-white">
+            Side-by-Side Comparison
+          </button>
+        </div>
+
+        <!-- Theme Toggle Switch (Matches attached image) -->
+        <div id="themeToggleWrapper" class="flex items-center gap-2">
+          <span class="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline">Theme:</span>
+          <button 
+            id="themeToggleBtn" 
+            onclick="toggleTheme()" 
+            class="theme-switch-track focus:outline-none focus:ring-2 focus:ring-blue-500/40" 
+            title="Toggle Light / Dark mode" 
+            aria-label="Toggle Light and Dark Mode"
+            role="switch"
+            aria-checked="false">
+            <div class="theme-switch-thumb">
+              <div class="theme-switch-sun"></div>
+              <div class="theme-switch-moon">
+                <svg viewBox="0 0 24 24" class="w-[18px] h-[18px] text-[#58A6FF] filter drop-shadow-[0_0_5px_rgba(88,166,255,0.6)]" fill="currentColor">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+
+        <!-- Copy Email HTML Button -->
+        <a 
+          href="email-report.html" 
+          download="email-report.html"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs shadow-xs transition-colors"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download HTML</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-8">
+
+    <!-- Comparison Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-xs">
+        <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold text-xs mb-1">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          Single Universal Design
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400">
+          No extreme stark light or deep pitch-black themes. A unified neutral card that renders consistently across both Light and Dark mode email clients.
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-xs">
+        <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold text-xs mb-1">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+          Montserrat Typography
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400">
+          Clean, elegant Montserrat geometry applied universally to all headings, KPIs, latency breakdowns, and executive observations.
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl p-4 shadow-xs">
+        <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-xs mb-1">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Zero White-Box Chart Glare
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-400">
+          Vector charts and latency bars use transparent backgrounds. In dark mode, no glaring white image boxes appear around the charts.
+        </p>
+      </div>
+    </div>
+
+    <!-- Interactive Chart Color Picker Bar -->
+    <div class="mb-6 flex flex-wrap items-center justify-between gap-3 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 rounded-xl px-5 py-3 shadow-xs">
+      <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-200">
+        <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span>7-Day Speed Breakdown Chart Color:</span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="setChartPalette('brand')" id="pal-brand" class="palette-btn px-2.5 py-1 rounded-lg text-xs font-semibold border transition-all flex items-center gap-1.5 bg-blue-50 dark:bg-blue-950/60 border-blue-400 text-blue-800 dark:text-blue-300">
+          <span class="w-3 h-3 rounded-full bg-[#1A4895] inline-block shadow-xs"></span>
+          <span class="w-3 h-3 rounded-full bg-[#2296D3] inline-block -ml-1 shadow-xs"></span>
+          <span>GA Brand Duo (Active)</span>
+        </button>
+
+        <button onclick="setChartPalette('slate')" id="pal-slate" class="palette-btn px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-400 transition-all flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-full bg-[#0F172A] inline-block shadow-xs"></span>
+          <span class="w-3 h-3 rounded-full bg-[#2563EB] inline-block -ml-1 shadow-xs"></span>
+          <span>Slate &amp; Cobalt</span>
+        </button>
+
+        <button onclick="setChartPalette('emerald')" id="pal-emerald" class="palette-btn px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-400 transition-all flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-full bg-[#059669] inline-block shadow-xs"></span>
+          <span class="w-3 h-3 rounded-full bg-[#4F46E5] inline-block -ml-1 shadow-xs"></span>
+          <span>Emerald &amp; Indigo</span>
+        </button>
+
+        <button onclick="setChartPalette('steel')" id="pal-steel" class="palette-btn px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-400 transition-all flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-full bg-[#334155] inline-block shadow-xs"></span>
+          <span class="w-3 h-3 rounded-full bg-[#94A3B8] inline-block -ml-1 shadow-xs"></span>
+          <span>Monochrome Steel</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 1: SINGLE VIEW (Controlled by Top Bar Switch) -->
+    <div id="view-single" class="block">
+      <!-- Simulated Outlook Window Wrapper -->
+      <div class="bg-white dark:bg-[#161F30] border border-slate-200 dark:border-slate-700/80 rounded-2xl shadow-xl overflow-hidden max-w-3xl mx-auto">
+        <!-- Mock Email Header -->
+        <div class="bg-slate-50 dark:bg-[#111827] border-b border-slate-200 dark:border-slate-700/80 px-6 py-3.5 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-slate-800 dark:text-slate-100">[GA Web Telemetry] Weekly Executive Health &amp; Reliability Report: https://cpvia.com/</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+              From: <span class="font-medium text-slate-700 dark:text-slate-300">GA Web Telemetry &lt;hemachandra.ponnaganti@gmail.com&gt;</span>
+            </div>
+          </div>
+          <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+            Outlook Preview
+          </span>
+        </div>
+
+        <!-- Rendered Email Document -->
+        <div id="singleFrameContainer" class="p-2 sm:p-6 bg-[#EEF2F6] dark:bg-[#181F2C] transition-colors duration-300">
+          <iframe id="singleIframe" src="email-report.html" class="email-frame"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 2: SIDE-BY-SIDE COMPARISON (Demonstrates Universal Compatibility) -->
+    <div id="view-compare" class="hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Light Theme Mail Client Window -->
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+          <div class="bg-slate-50 border-b border-slate-200 px-5 py-3 flex items-center justify-between text-xs">
+            <span class="font-bold text-slate-800">Light Client View (Roundcube / Apple Mail)</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold text-[10px] border border-slate-200">Light Canvas</span>
+          </div>
+          <div class="p-4 bg-[#EEF2F6]">
+            <iframe id="compareIframeLight" src="email-report.html" class="email-frame"></iframe>
+          </div>
+        </div>
+
+        <!-- Dark Theme Mail Client Window -->
+        <div class="bg-[#181F2C] border border-slate-700/80 rounded-2xl shadow-xl overflow-hidden">
+          <div class="bg-[#111722] border-b border-slate-700/80 px-5 py-3 flex items-center justify-between text-xs text-white">
+            <span class="font-bold text-slate-100">Dark Client View (Outlook Dark Mode)</span>
+            <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 font-semibold text-[10px] border border-blue-800">Dark Canvas</span>
+          </div>
+          <div class="p-4 bg-[#181F2C]">
+            <iframe id="compareIframeDark" src="email-report.html" class="email-frame"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem('cpvia-theme') || 'light';
+      applyTheme(savedTheme);
+    }
+
+    function applyTheme(theme) {
+      const html = document.documentElement;
+      const toggleBtn = document.getElementById('themeToggleBtn');
+
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        html.classList.remove('light');
+        if (toggleBtn) toggleBtn.setAttribute('aria-checked', 'true');
+        applyIframeDark(true);
+      } else {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        if (toggleBtn) toggleBtn.setAttribute('aria-checked', 'false');
+        applyIframeDark(false);
+      }
+      localStorage.setItem('cpvia-theme', theme);
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      applyTheme(isDark ? 'light' : 'dark');
+    }
+
+    function applyIframeDark(isDark) {
+      const iframe = document.getElementById('singleIframe');
+      if (iframe && iframe.contentDocument) {
+        resizeIframe(iframe);
+      }
+    }
+
+    function resizeIframe(iframe) {
+      try {
+        if (iframe && iframe.contentWindow && iframe.contentWindow.document.body) {
+          const scrollH = iframe.contentWindow.document.body.scrollHeight;
+          if (scrollH > 200) {
+            iframe.style.height = (scrollH + 20) + 'px';
+          }
+        }
+      } catch (e) {
+        // Fallback default
+        iframe.style.height = '1150px';
+      }
+    }
+
+    // Set View Mode
+    function setViewMode(mode) {
+      const singleView = document.getElementById('view-single');
+      const compareView = document.getElementById('view-compare');
+      const btnSingle = document.getElementById('btn-single');
+      const btnCompare = document.getElementById('btn-compare');
+      const toggleWrapper = document.getElementById('themeToggleWrapper');
+
+      if (mode === 'single') {
+        singleView.classList.remove('hidden');
+        compareView.classList.add('hidden');
+        btnSingle.className = 'px-3 py-1 rounded-md transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-xs';
+        btnCompare.className = 'px-3 py-1 rounded-md transition-all hover:text-slate-900 dark:hover:text-white';
+        toggleWrapper.classList.remove('opacity-50', 'pointer-events-none');
+        const singleIframe = document.getElementById('singleIframe');
+        resizeIframe(singleIframe);
+      } else {
+        singleView.classList.add('hidden');
+        compareView.classList.remove('hidden');
+        btnCompare.className = 'px-3 py-1 rounded-md transition-all bg-white dark:bg-slate-700 text-slate-900 dark:text-white font-semibold shadow-xs';
+        btnSingle.className = 'px-3 py-1 rounded-md transition-all hover:text-slate-900 dark:hover:text-white';
+        toggleWrapper.classList.add('opacity-50', 'pointer-events-none');
+
+        // Resize iframes in compare mode
+        setTimeout(() => {
+          const darkIframe = document.getElementById('compareIframeDark');
+          if (darkIframe) {
+            resizeIframe(darkIframe);
+          }
+          const lightIframe = document.getElementById('compareIframeLight');
+          if (lightIframe) {
+            resizeIframe(lightIframe);
+          }
+        }, 150);
+      }
+    }
+
+    // Chart Palettes Management
+    const chartPalettes = {
+      brand: { desktop: '#1A4895', mobile: '#2296D3' },
+      slate: { desktop: '#0F172A', mobile: '#2563EB' },
+      emerald: { desktop: '#059669', mobile: '#4F46E5' },
+      steel: { desktop: '#334155', mobile: '#94A3B8' }
+    };
+
+    function setChartPalette(name) {
+      const p = chartPalettes[name] || chartPalettes.brand;
+      
+      // Update Button Styles
+      document.querySelectorAll('.palette-btn').forEach(btn => {
+        btn.className = 'palette-btn px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-slate-400 transition-all flex items-center gap-1.5';
+      });
+      const activeBtn = document.getElementById('pal-' + name);
+      if (activeBtn) {
+        activeBtn.className = 'palette-btn px-2.5 py-1 rounded-lg text-xs font-semibold border transition-all flex items-center gap-1.5 bg-blue-50 dark:bg-blue-950/60 border-blue-400 text-blue-800 dark:text-blue-300';
+      }
+
+      // Apply to all iframes
+      ['singleIframe', 'compareIframeLight', 'compareIframeDark'].forEach(id => {
+        const iframe = document.getElementById(id);
+        if (iframe && iframe.contentDocument) {
+          applyPaletteToDoc(iframe.contentDocument, p);
+        }
+      });
+
+      localStorage.setItem('cpvia-chart-pal', name);
+    }
+
+    function applyPaletteToDoc(doc, p) {
+      if (!doc) return;
+      const desktopXs = ['60', '130', '200', '270', '340', '410', '480'];
+      desktopXs.forEach(x => {
+        const rect = doc.querySelector(`rect[x="${x}"]`);
+        if (rect) rect.setAttribute('fill', p.desktop);
+      });
+
+      const mobileXs = ['76', '146', '216', '286', '356', '426', '496'];
+      mobileXs.forEach(x => {
+        const rect = doc.querySelector(`rect[x="${x}"]`);
+        if (rect) rect.setAttribute('fill', p.mobile);
+      });
+
+      // Update legend color dots
+      const legendDots = doc.querySelectorAll('span[style*="border-radius: 2px"]');
+      if (legendDots.length >= 2) {
+        legendDots[0].style.backgroundColor = p.desktop;
+        legendDots[1].style.backgroundColor = p.mobile;
+      }
+    }
+
+    // Handle iframe load
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+
+      const savedPal = localStorage.getItem('cpvia-chart-pal') || 'brand';
+
+      const singleIframe = document.getElementById('singleIframe');
+      singleIframe.onload = () => {
+        applyTheme(localStorage.getItem('cpvia-theme') || 'light');
+        setChartPalette(savedPal);
+        resizeIframe(singleIframe);
+      };
+
+      const compareLight = document.getElementById('compareIframeLight');
+      if (compareLight) {
+        compareLight.onload = () => {
+          setChartPalette(savedPal);
+          resizeIframe(compareLight);
+        };
+      }
+
+      const compareDark = document.getElementById('compareIframeDark');
+      if (compareDark) {
+        compareDark.onload = () => {
+          setChartPalette(savedPal);
+          resizeIframe(compareDark);
+        };
+      }
+    });
+  </script>
+</body>
+</html>

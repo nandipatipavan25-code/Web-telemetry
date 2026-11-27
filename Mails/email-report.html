@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+  <title>[GA Web Telemetry] Weekly Executive Health &amp; Reliability Report: https://cpvia.com/</title>
+
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+
+  <!-- Montserrat Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
+
+    /* Global Reset & Universal Montserrat Font */
+    body, table, td, p, a, li, blockquote, div, span, h1, h2, h3, h4, h5, h6 {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    }
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      display: block;
+    }
+
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      background-color: #EEF2F6;
+      color: #0F172A;
+    }
+
+    /* Single Neutral Design: Elevated Multi-Layer Card System */
+    .neutral-shell {
+      background-color: #EEF2F6;
+    }
+    .neutral-card {
+      background-color: #FFFFFF !important;
+      border: 1px solid #D8E2EC !important;
+      border-radius: 16px !important;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+    }
+    .neutral-well {
+      background-color: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 12px !important;
+    }
+    .neutral-pedestal {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%) !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 10px !important;
+    }
+
+    /* High-legibility text styles */
+    .title-primary {
+      color: #0F172A !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.02em !important;
+    }
+    .text-body-neutral {
+      color: #475569 !important;
+      font-weight: 500 !important;
+    }
+    .text-muted-neutral {
+      color: #64748B !important;
+      font-weight: 500 !important;
+    }
+
+    /* Responsive Mobile Layout */
+    @media only screen and (max-width: 640px) {
+      .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+      }
+      .col-mobile-full {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .col-mobile-gap {
+        margin-bottom: 12px !important;
+      }
+      .col-mobile-half {
+        display: inline-block !important;
+        width: 48% !important;
+        margin-bottom: 10px !important;
+        vertical-align: top !important;
+      }
+      .mobile-hide {
+        display: none !important;
+      }
+      .mobile-pad {
+        padding: 14px !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #EEF2F6; font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased;">
+
+  <!-- Outer Canvas Table (Soft Neutral Tone: Suitable for Light and Dark Mail Clients) -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-shell" style="background-color: #EEF2F6; width: 100%; margin: 0; padding: 24px 0;">
+    <tr>
+      <td align="center" style="padding: 0 10px;">
+
+        <!-- Email Container (Max Width 640px, Self-Contained Neutral Card) -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="email-container" style="max-width: 640px; margin: 0 auto;">
+
+          <!-- TOP UTILITY BAR (Official GA Vector Symbol + Status Badges) -->
+          <tr>
+            <td style="padding-bottom: 12px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 12px; padding: 12px 18px;">
+                <tr>
+                  <!-- Left: Standalone Official GA Vector Symbol + Title -->
+                  <td valign="middle" align="left">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td valign="middle" style="padding-right: 10px;">
+                          <!-- Official GA Symbol (Blue Gradient, Standalone, No Black Box) -->
+                          <svg viewBox="0 0 1800 1800" width="22" height="22" style="display: block;" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <linearGradient id="gaSymbolGradient" x1="1152.72" y1="1615.65" x2="485.86" y2="285.63" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.01" stop-color="#2296D3"/>
+                                <stop offset="1" stop-color="#1A4895"/>
+                              </linearGradient>
+                            </defs>
+                            <path fill="url(#gaSymbolGradient)" d="M983.74,36,916,164,796.68,389.45c-83.85-29.24-176-28.56-259.15,5.2C432,437.47,353.93,528.31,322.59,637.27q-4.41,17.49-7.2,35.59a365.41,365.41,0,0,0-7.4,73.35c0,119.12,57.26,224.85,145.75,291.21L317.57,1294.71l-19,36H1721.11Z"/>
+                            <path fill="#FFFFFF" d="M609.41,657V871.47l392.42,0c-8.62,31.62-32.93,103.69-100.48,163-102.12,89.73-225.52,82.24-254,79.62C495.56,1100.18,338,977.53,313.67,795.61,292.6,638.12,377,478.39,524.91,412.13c127.17-57,278.6-34.68,388.9,57.41l167-170.68c-40.3-38.64-104.91-90.09-195.19-121.8C635.68,89.26,297,190.75,150.1,450c-115.57,204-60.65,414.31-49.83,452.81,55.59,197.95,194.44,303.47,234,331.49C465,1327,598.8,1343.54,670.07,1345.92c53.95,1.79,184.55,4.42,317.4-75.83,202.68-122.43,248-339.55,256.74-381.32,20.25-96.95,12.38-179.63,3.25-231.82Z"/>
+                          </svg>
+                        </td>
+                        <td valign="middle">
+                          <span style="font-size: 13px; font-weight: 700; color: #0F172A; letter-spacing: -0.01em;">
+                            GA Web Telemetry
+                          </span>
+                        </td>
+                        <td valign="middle" class="mobile-hide" style="padding-left: 8px;">
+                          <span style="font-size: 11px; color: #CBD5E1;">|</span>
+                          <span style="font-size: 11px; color: #64748B; font-weight: 500; padding-left: 6px;">Executive SRE Engine</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!-- Right: Status Badges -->
+                  <td valign="middle" align="right">
+                    <span style="display: inline-block; background-color: #ECFDF5; color: #047857; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 6px; border: 1px solid #A7F3D0; margin-right: 6px;">
+                      &bull; HTTP 200 OK
+                    </span>
+                    <span style="display: inline-block; background-color: #F1F5F9; color: #475569; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 6px; border: 1px solid #E2E8F0;" class="mobile-hide">
+                      7-Day Sync
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- MAIN HEADER CARD (Clean Title: No Icon Before CPVIA, Pure Montserrat) -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 22px 24px;">
+                <tr>
+                  <td valign="top">
+                    <!-- Badges -->
+                    <div style="margin-bottom: 8px;">
+                      <span style="display: inline-block; background-color: #EFF6FF; color: #1D4ED8; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 5px; border: 1px solid #DBEAFE; margin-right: 6px;">
+                        Client Performance View
+                      </span>
+                      <span style="display: inline-block; background-color: #F8FAFC; color: #64748B; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 5px; border: 1px solid #E2E8F0;">
+                        Weekly Executive Health &amp; Reliability Report
+                      </span>
+                    </div>
+
+                    <!-- Clean Client Title: Exactly "CPVIA | Advanced Statistical Programming" with NO icon before CPVIA -->
+                    <h1 style="margin: 0; font-size: 21px; font-weight: 800; color: #0F172A; letter-spacing: -0.02em; line-height: 1.3;">
+                      CPVIA <span style="color: #CBD5E1; font-weight: 400; margin: 0 4px;">|</span> <span style="font-size: 16px; font-weight: 600; color: #475569;">Advanced Statistical Programming</span>
+                    </h1>
+
+                    <div style="margin-top: 8px; font-size: 12px; color: #64748B; line-height: 1.5;">
+                      Target Domain: <a href="https://cpvia.com/" target="_blank" style="color: #2563EB; text-decoration: none; font-weight: 700;">https://cpvia.com/</a>
+                      <span style="color: #CBD5E1; margin: 0 6px;">&bull;</span>
+                      Audit Period: <span style="font-weight: 600; color: #0F172A;">2 Nov &ndash; 9 Nov 2026</span>
+                    </div>
+                  </td>
+
+                  <!-- Overall Health Score Well -->
+                  <td valign="top" align="right" class="mobile-hide" style="padding-left: 16px;">
+                    <div class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 96px;">
+                      <div style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.05em;">Health Score</div>
+                      <div style="font-size: 28px; font-weight: 900; color: #2563EB; line-height: 1.1; margin: 2px 0;">81%</div>
+                      <span style="font-size: 10px; font-weight: 700; color: #059669; letter-spacing: 0.02em;">&check; GOOD</span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ROW 1: 1. EXECUTIVE SUMMARY & KEY STATS (3 Top Metric Tiles) -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 20px 22px;">
+                <tr>
+                  <td>
+                    <!-- Section Header -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 14px;">
+                      <tr>
+                        <td>
+                          <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #64748B; margin-bottom: 2px;">
+                            Section 1
+                          </div>
+                          <div style="font-size: 15px; font-weight: 800; color: #0F172A; letter-spacing: -0.01em;">
+                            Executive Health &amp; Operational Snapshot
+                          </div>
+                          <div style="font-size: 12px; color: #64748B; font-weight: 500; margin-top: 2px;">
+                            Continuous synthetic monitoring across reliability, user experience, and perimeter integrity.
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- 3 Neutral Metric Columns -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <!-- Metric 1: Health Score -->
+                        <td class="col-mobile-full col-mobile-gap" width="32%" valign="top" style="padding-right: 2%;">
+                          <div class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 12px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em; margin-bottom: 4px;">Website Health</div>
+                            <div style="font-size: 32px; font-weight: 900; color: #2563EB; line-height: 1;">81%</div>
+                            <div style="margin-top: 6px;">
+                              <span style="font-size: 10px; font-weight: 700; color: #047857; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 2px 8px; border-radius: 4px;">
+                                &check; GOOD
+                              </span>
+                            </div>
+                            <div style="font-size: 10px; color: #64748B; font-weight: 500; margin-top: 6px;">Algorithmic Benchmark</div>
+                          </div>
+                        </td>
+
+                        <!-- Metric 2: Weekly Uptime -->
+                        <td class="col-mobile-full col-mobile-gap" width="32%" valign="top" style="padding-right: 2%;">
+                          <div class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 12px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em; margin-bottom: 4px;">Weekly Uptime</div>
+                            <div style="font-size: 32px; font-weight: 900; color: #059669; line-height: 1;">100%</div>
+                            <div style="margin-top: 6px;">
+                              <span style="font-size: 10px; font-weight: 700; color: #047857; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 2px 8px; border-radius: 4px;">
+                                ZERO OUTAGES
+                              </span>
+                            </div>
+                            <div style="font-size: 10px; color: #64748B; font-weight: 500; margin-top: 6px;">60+ Probes Audited</div>
+                          </div>
+                        </td>
+
+                        <!-- Metric 3: Avg Response Speed -->
+                        <td class="col-mobile-full" width="32%" valign="top">
+                          <div class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 12px; text-align: center;">
+                            <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em; margin-bottom: 4px;">Avg Response Speed</div>
+                            <div style="font-size: 30px; font-weight: 900; color: #D97706; line-height: 1;">10,020<span style="font-size: 16px; font-weight: 700;">ms</span></div>
+                            <div style="margin-top: 6px;">
+                              <span style="font-size: 10px; font-weight: 700; color: #B45309; background-color: #FEF3C7; border: 1px solid #FDE68A; padding: 2px 8px; border-radius: 4px;">
+                                ATTENTION NEEDED
+                              </span>
+                            </div>
+                            <div style="font-size: 10px; color: #64748B; font-weight: 500; margin-top: 6px;">Desktop 1.62s &bull; Mob 3.12s</div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ROW 2: CORE RELIABILITY & PAGE SPEED (Two Elevated Cards with 3D Plinths) -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <!-- Card A: Core Reliability & Segmented Latency -->
+                  <td class="col-mobile-full col-mobile-gap" width="49%" valign="top" style="padding-right: 1%;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 18px 20px;">
+                      <tr>
+                        <td>
+                          <!-- Plinth + Header -->
+                          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 12px;">
+                            <tr>
+                              <td width="42" valign="middle">
+                                <div class="neutral-pedestal" style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; text-align: center; line-height: 38px;">
+                                  <svg viewBox="0 0 64 64" width="22" height="22" style="display: inline-block; vertical-align: middle;" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="32,6 52,16 32,26 12,16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5" />
+                                    <polygon points="12,16 32,26 32,54 12,44" fill="#1E293B" />
+                                    <polygon points="32,26 52,16 52,44 32,54" fill="#0F172A" />
+                                    <circle cx="20" cy="27" r="2.5" fill="#10B981" />
+                                    <circle cx="20" cy="35" r="2.5" fill="#10B981" />
+                                    <circle cx="20" cy="43" r="2.5" fill="#10B981" />
+                                  </svg>
+                                </div>
+                              </td>
+                              <td valign="middle" style="padding-left: 10px;">
+                                <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #475569; letter-spacing: 0.05em;">
+                                  Core Reliability
+                                </div>
+                                <div style="font-size: 11px; color: #64748B; font-weight: 500;">
+                                  Autonomous Edge Monitoring
+                                </div>
+                              </td>
+                              <td valign="middle" align="right">
+                                <span style="display: inline-block; background-color: #ECFDF5; color: #047857; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 9999px; border: 1px solid #A7F3D0;">
+                                  ONLINE
+                                </span>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <!-- Big Metric -->
+                          <div style="margin-bottom: 6px;">
+                            <span style="font-size: 32px; font-weight: 900; color: #0F172A; line-height: 1;">100%</span>
+                            <span style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #047857; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 2px 6px; border-radius: 4px; vertical-align: middle; margin-left: 4px;">
+                              30-Day Availability
+                            </span>
+                          </div>
+
+                          <p style="margin: 0 0 12px 0; font-size: 11px; color: #64748B; line-height: 1.5; font-weight: 500;">
+                            0 recorded downtime incidents across all scheduled global health probes this audit period.
+                          </p>
+
+                          <!-- Segmented Latency Bar -->
+                          <div class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 10px 12px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 6px;">
+                              <tr>
+                                <td style="font-size: 10px; font-weight: 600; color: #64748B;">Latency Breakdown:</td>
+                                <td align="right" style="font-size: 11px; font-weight: 800; color: #D97706;">10,020 ms</td>
+                              </tr>
+                            </table>
+                            <!-- Segmented Bar -->
+                            <table role="presentation" width="100%" height="6" cellpadding="0" cellspacing="0" border="0" style="border-radius: 9999px; overflow: hidden; background-color: #E2E8F0; margin-bottom: 6px;">
+                              <tr>
+                                <td width="10%" style="background-color: #10B981;"></td>
+                                <td width="15%" style="background-color: #3B82F6;"></td>
+                                <td width="75%" style="background-color: #F59E0B;"></td>
+                              </tr>
+                            </table>
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size: 9px; color: #64748B; font-weight: 600;">
+                              <tr>
+                                <td align="left">DNS: 120ms</td>
+                                <td align="center">Transit: 180ms</td>
+                                <td align="right" style="color: #D97706;">TTFB: 6.74s</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!-- Card B: Page Speed & Lighthouse Web Vitals -->
+                  <td class="col-mobile-full" width="49%" valign="top" style="padding-left: 1%;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 18px 20px;">
+                      <tr>
+                        <td>
+                          <!-- Plinth + Header -->
+                          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 12px;">
+                            <tr>
+                              <td width="42" valign="middle">
+                                <div class="neutral-pedestal" style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; text-align: center; line-height: 38px;">
+                                  <svg viewBox="0 0 64 64" width="22" height="22" style="display: inline-block; vertical-align: middle;" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="32" cy="30" r="19" fill="#F59E0B" />
+                                    <polygon points="34,14 22,31 31,31 28,44 42,27 33,27" fill="#FFFFFF" />
+                                  </svg>
+                                </div>
+                              </td>
+                              <td valign="middle" style="padding-left: 10px;">
+                                <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: #475569; letter-spacing: 0.05em;">
+                                  Page Speed
+                                </div>
+                                <div style="font-size: 11px; color: #64748B; font-weight: 500;">
+                                  Google Lighthouse
+                                </div>
+                              </td>
+                              <td valign="middle" align="right">
+                                <span style="display: inline-block; background-color: #EFF6FF; color: #1D4ED8; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 9999px; border: 1px solid #DBEAFE;">
+                                  VITALS
+                                </span>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <!-- Score Box + 3 Vitals -->
+                          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 10px;">
+                            <tr>
+                              <td width="36%" valign="top" style="padding-right: 6px;">
+                                <div class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 10px 8px; text-align: center;">
+                                  <div style="font-size: 26px; font-weight: 900; color: #0F172A; line-height: 1;">82</div>
+                                  <span style="font-size: 9px; font-weight: 700; color: #047857; text-transform: uppercase;">GOOD</span>
+                                  <div style="font-size: 8px; color: #64748B; font-weight: 600; margin-top: 2px;">Perf Score</div>
+                                </div>
+                              </td>
+                              <td width="64%" valign="top">
+                                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-well" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 6px 10px; font-size: 10px;">
+                                  <tr>
+                                    <td style="padding: 2.5px 0; color: #64748B; font-weight: 500;">LCP (Load Speed)</td>
+                                    <td align="right" style="padding: 2.5px 0; font-weight: 800; color: #059669;">1.62s &check;</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 2.5px 0; color: #64748B; font-weight: 500;">INP (Interactivity)</td>
+                                    <td align="right" style="padding: 2.5px 0; font-weight: 800; color: #059669;">82ms &check;</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="padding: 2.5px 0; color: #64748B; font-weight: 500;">CLS (Visual Shift)</td>
+                                    <td align="right" style="padding: 2.5px 0; font-weight: 800; color: #059669;">0.06 &check;</td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <div style="font-size: 10px; color: #047857; font-weight: 600;">
+                            &check; Desktop experience comfortably clears Google Core Web Vitals.
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ROW 3: 4 PILLARS (SSL, Domain, SEO, Security — Clean Balanced Grid) -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <!-- Pillar 1: SSL Certificate -->
+                  <td class="col-mobile-half" width="23.5%" valign="top" style="padding-right: 2%;">
+                    <div class="neutral-card" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 14px; padding: 12px 14px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 6px;">
+                        <tr>
+                          <td>
+                            <div class="neutral-pedestal" style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; text-align: center; line-height: 28px;">
+                              <svg viewBox="0 0 64 64" width="16" height="16" style="display: inline-block; vertical-align: middle;" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 22,26 V 17 C 22,11.5 26.5,7 32,7 C 37.5,7 42,11.5 42,17 V 26" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+                                <rect x="15" y="24" width="34" height="26" rx="6" fill="#059669" />
+                                <circle cx="32" cy="34" r="3" fill="#064E3B" />
+                              </svg>
+                            </div>
+                          </td>
+                          <td align="right">
+                            <span style="font-size: 8px; font-weight: 700; color: #047857; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 1px 5px; border-radius: 4px;">SECURE</span>
+                          </td>
+                        </tr>
+                      </table>
+                      <div style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em;">SSL Encrypt</div>
+                      <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin: 2px 0;">51d Left</div>
+                      <div style="font-size: 9px; color: #64748B; font-weight: 500; border-top: 1px solid #F1F5F9; padding-top: 4px;">Let's Encrypt</div>
+                    </div>
+                  </td>
+
+                  <!-- Pillar 2: Domain Registration -->
+                  <td class="col-mobile-half" width="23.5%" valign="top" style="padding-right: 2%;">
+                    <div class="neutral-card" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 14px; padding: 12px 14px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 6px;">
+                        <tr>
+                          <td>
+                            <div class="neutral-pedestal" style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; text-align: center; line-height: 28px;">
+                              <svg viewBox="0 0 64 64" width="16" height="16" style="display: inline-block; vertical-align: middle;" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="31" r="18" fill="#2563EB" />
+                                <ellipse cx="32" cy="32" rx="24" ry="8" stroke="#60A5FA" stroke-width="2" transform="rotate(-20 32 32)" />
+                              </svg>
+                            </div>
+                          </td>
+                          <td align="right">
+                            <span style="font-size: 8px; font-weight: 700; color: #1D4ED8; background-color: #EFF6FF; border: 1px solid #DBEAFE; padding: 1px 5px; border-radius: 4px;">ACTIVE</span>
+                          </td>
+                        </tr>
+                      </table>
+                      <div style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em;">Domain Reg</div>
+                      <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin: 2px 0;">85d Left</div>
+                      <div style="font-size: 9px; color: #64748B; font-weight: 500; border-top: 1px solid #F1F5F9; padding-top: 4px;">GoDaddy.com</div>
+                    </div>
+                  </td>
+
+                  <!-- Pillar 3: SEO Health -->
+                  <td class="col-mobile-half" width="23.5%" valign="top" style="padding-right: 2%;">
+                    <div class="neutral-card" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 14px; padding: 12px 14px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 6px;">
+                        <tr>
+                          <td>
+                            <div class="neutral-pedestal" style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; text-align: center; line-height: 28px;">
+                              <svg viewBox="0 0 64 64" width="16" height="16" style="display: inline-block; vertical-align: middle;" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="14" y="12" width="24" height="30" rx="3" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+                                <circle cx="36" cy="27" r="12" stroke="#D97706" stroke-width="3" fill="#FEF3C7" />
+                                <path d="M 44,35 L 53,44" stroke="#78350F" stroke-width="3" stroke-linecap="round" />
+                              </svg>
+                            </div>
+                          </td>
+                          <td align="right">
+                            <span style="font-size: 8px; font-weight: 700; color: #D97706; background-color: #FEF3C7; border: 1px solid #FDE68A; padding: 1px 5px; border-radius: 4px;">53/100</span>
+                          </td>
+                        </tr>
+                      </table>
+                      <div style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em;">SEO Health</div>
+                      <div style="font-size: 16px; font-weight: 800; color: #D97706; margin: 2px 0;">Standard</div>
+                      <div style="font-size: 9px; color: #047857; font-weight: 600; border-top: 1px solid #F1F5F9; padding-top: 4px;">0 Broken Links</div>
+                    </div>
+                  </td>
+
+                  <!-- Pillar 4: Security & Malware -->
+                  <td class="col-mobile-half" width="23.5%" valign="top">
+                    <div class="neutral-card" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 14px; padding: 12px 14px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 6px;">
+                        <tr>
+                          <td>
+                            <div class="neutral-pedestal" style="width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%); border: 1px solid #E2E8F0; text-align: center; line-height: 28px;">
+                              <svg viewBox="0 0 64 64" width="16" height="16" style="display: inline-block; vertical-align: middle;" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 32,8 L 16,14 C 16,30 23,43 32,49 C 41,43 48,30 48,14 Z" fill="#059669" />
+                                <path d="M 24,28 L 29,33 L 40,21" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+                              </svg>
+                            </div>
+                          </td>
+                          <td align="right">
+                            <span style="font-size: 8px; font-weight: 700; color: #047857; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 1px 5px; border-radius: 4px;">CLEAN</span>
+                          </td>
+                        </tr>
+                      </table>
+                      <div style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: #64748B; letter-spacing: 0.04em;">Integrity</div>
+                      <div style="font-size: 16px; font-weight: 800; color: #059669; margin: 2px 0;">0 Threats</div>
+                      <div style="font-size: 9px; color: #64748B; font-weight: 500; border-top: 1px solid #F1F5F9; padding-top: 4px;">60 Deep Audits</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ROW 4: 7-DAY SPEED COMPARISON CHART (Pure Transparent SVG - Zero White Box!) -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 20px 22px;">
+                <tr>
+                  <td>
+                    <!-- Chart Header & Legend (Clean stacked layout: prevents legend collision) -->
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 10px;">
+                      <tr>
+                        <td align="left">
+                          <div style="font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; color: #0F172A; font-family: 'Montserrat', sans-serif;">
+                            7-Day Speed Breakdown: Mobile (4G) vs. Desktop Origin
+                          </div>
+                          <div style="font-size: 11px; color: #64748B; font-weight: 400; margin-top: 3px; margin-bottom: 8px; font-family: 'Montserrat', sans-serif;">
+                            Comparative latency metrics measured across trailing 7 calendar days
+                          </div>
+                          <!-- Clean Legend Row with Proper Spacing -->
+                          <div style="padding-bottom: 6px; font-family: 'Montserrat', sans-serif;">
+                            <span style="display: inline-block; width: 10px; height: 10px; background-color: #1A4895; border-radius: 2px; vertical-align: middle;"></span>
+                            <span style="font-size: 11px; color: #1E293B; font-weight: 500; vertical-align: middle; margin-left: 4px; margin-right: 16px;">Desktop Origin</span>
+                            <span style="display: inline-block; width: 10px; height: 10px; background-color: #2296D3; border-radius: 2px; vertical-align: middle;"></span>
+                            <span style="font-size: 11px; color: #1E293B; font-weight: 500; vertical-align: middle; margin-left: 4px;">Mobile (4G)</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <!-- Transparent Vector Chart (Refined GA Brand Palette: Deep Blue #1A4895 & Sky Cyan #2296D3) -->
+                    <div style="width: 100%; overflow-x: auto;">
+                      <svg viewBox="0 0 560 140" width="100%" height="140" style="background: transparent; display: block;" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Horizontal Grid Lines -->
+                        <line x1="36" y1="20" x2="540" y2="20" stroke="#E2E8F0" stroke-dasharray="3 3"/>
+                        <line x1="36" y1="55" x2="540" y2="55" stroke="#E2E8F0" stroke-dasharray="3 3"/>
+                        <line x1="36" y1="90" x2="540" y2="90" stroke="#E2E8F0" stroke-dasharray="3 3"/>
+                        <line x1="36" y1="115" x2="540" y2="115" stroke="#CBD5E1"/>
+
+                        <text x="30" y="24" text-anchor="end" font-size="9" fill="#94A3B8" font-family="'Montserrat', sans-serif" font-weight="600">3.5s</text>
+                        <text x="30" y="59" text-anchor="end" font-size="9" fill="#94A3B8" font-family="'Montserrat', sans-serif" font-weight="600">2.5s</text>
+                        <text x="30" y="94" text-anchor="end" font-size="9" fill="#94A3B8" font-family="'Montserrat', sans-serif" font-weight="600">1.5s</text>
+
+                        <!-- Mon -->
+                        <rect x="60" y="74" width="14" height="41" rx="3" fill="#1A4895"/>
+                        <rect x="76" y="36" width="14" height="79" rx="3" fill="#2296D3"/>
+                        <text x="75" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Mon</text>
+
+                        <!-- Tue -->
+                        <rect x="130" y="72" width="14" height="43" rx="3" fill="#1A4895"/>
+                        <rect x="146" y="31" width="14" height="84" rx="3" fill="#2296D3"/>
+                        <text x="145" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Tue</text>
+
+                        <!-- Wed -->
+                        <rect x="200" y="76" width="14" height="39" rx="3" fill="#1A4895"/>
+                        <rect x="216" y="36" width="14" height="79" rx="3" fill="#2296D3"/>
+                        <text x="215" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Wed</text>
+
+                        <!-- Thu -->
+                        <rect x="270" y="75" width="14" height="40" rx="3" fill="#1A4895"/>
+                        <rect x="286" y="39" width="14" height="76" rx="3" fill="#2296D3"/>
+                        <text x="285" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Thu</text>
+
+                        <!-- Fri -->
+                        <rect x="340" y="70" width="14" height="45" rx="3" fill="#1A4895"/>
+                        <rect x="356" y="29" width="14" height="86" rx="3" fill="#2296D3"/>
+                        <text x="355" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Fri</text>
+
+                        <!-- Sat -->
+                        <rect x="410" y="74" width="14" height="41" rx="3" fill="#1A4895"/>
+                        <rect x="426" y="36" width="14" height="79" rx="3" fill="#2296D3"/>
+                        <text x="425" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Sat</text>
+
+                        <!-- Sun -->
+                        <rect x="480" y="74" width="14" height="41" rx="3" fill="#1A4895"/>
+                        <rect x="496" y="36" width="14" height="79" rx="3" fill="#2296D3"/>
+                        <text x="495" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#64748B" font-family="'Montserrat', sans-serif">Sun</text>
+                      </svg>
+                    </div>
+
+                    <!-- Engineering SRE Insight Box (Polished with left accent border) -->
+                    <div style="margin-top: 14px; background-color: #F0F7FF; border: 1px solid #BAE6FD; border-left: 4px solid #0284C7; border-radius: 8px; padding: 12px 16px;">
+                      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td width="22" valign="top" style="color: #0284C7; font-size: 15px; font-weight: 800;">&#9432;</td>
+                          <td style="padding-left: 8px;">
+                            <div style="font-size: 11px; font-weight: 800; color: #0C4A6E; margin-bottom: 2px;">
+                              Engineering SRE Insight:
+                            </div>
+                            <p style="margin: 0; font-size: 11px; color: #1E40AF; line-height: 1.5; font-weight: 500;">
+                              Origin TTFB is currently averaging <strong>6.74s</strong> during un-cached backend rendering. Deploying edge cache routing or static CDN asset headers on <code>cpvia.com</code> can accelerate global TTFB to under <strong>200ms</strong>.
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ROW 5: CORE WEB VITALS PASSING STATUS COMPARISON -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 20px 22px;">
+                <tr>
+                  <td>
+                    <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0F172A; margin-bottom: 12px;">
+                      Core Web Vitals Benchmark Matrix
+                    </div>
+
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size: 11px; border-collapse: collapse;">
+                      <!-- Header Row -->
+                      <tr style="background-color: #F8FAFC; border-bottom: 1px solid #E2E8F0;">
+                        <th align="left" style="padding: 8px 10px; font-size: 10px; font-weight: 700; color: #64748B; text-transform: uppercase; border-top-left-radius: 8px;">Metric</th>
+                        <th align="left" style="padding: 8px 10px; font-size: 10px; font-weight: 700; color: #64748B; text-transform: uppercase;">What It Measures</th>
+                        <th align="center" style="padding: 8px 10px; font-size: 10px; font-weight: 700; color: #64748B; text-transform: uppercase;">Desktop</th>
+                        <th align="center" style="padding: 8px 10px; font-size: 10px; font-weight: 700; color: #64748B; text-transform: uppercase; border-top-right-radius: 8px;">Mobile (4G)</th>
+                      </tr>
+
+                      <!-- LCP -->
+                      <tr style="border-bottom: 1px solid #F1F5F9;">
+                        <td style="padding: 10px; font-weight: 700; color: #0F172A;">LCP</td>
+                        <td style="padding: 10px; color: #64748B; font-weight: 500;">Perceived main page load speed</td>
+                        <td align="center" style="padding: 10px;">
+                          <span style="font-weight: 800; color: #059669; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 2px 8px; border-radius: 4px;">1.62s (Good)</span>
+                        </td>
+                        <td align="center" style="padding: 10px;">
+                          <span style="font-weight: 700; color: #B45309; background-color: #FEF3C7; border: 1px solid #FDE68A; padding: 2px 8px; border-radius: 4px;">3.12s (Needs Work)</span>
+                        </td>
+                      </tr>
+
+                      <!-- INP -->
+                      <tr style="border-bottom: 1px solid #F1F5F9;">
+                        <td style="padding: 10px; font-weight: 700; color: #0F172A;">INP</td>
+                        <td style="padding: 10px; color: #64748B; font-weight: 500;">Click &amp; interaction responsiveness</td>
+                        <td align="center" style="padding: 10px;">
+                          <span style="font-weight: 800; color: #059669; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 2px 8px; border-radius: 4px;">82ms (Good)</span>
+                        </td>
+                        <td align="center" style="padding: 10px;">
+                          <span style="font-weight: 700; color: #B45309; background-color: #FEF3C7; border: 1px solid #FDE68A; padding: 2px 8px; border-radius: 4px;">303ms (Needs Work)</span>
+                        </td>
+                      </tr>
+
+                      <!-- CLS -->
+                      <tr>
+                        <td style="padding: 10px; font-weight: 700; color: #0F172A;">CLS</td>
+                        <td style="padding: 10px; color: #64748B; font-weight: 500;">Visual layout stability</td>
+                        <td align="center" style="padding: 10px;">
+                          <span style="font-weight: 800; color: #059669; background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 2px 8px; border-radius: 4px;">0.06 (Good)</span>
+                        </td>
+                        <td align="center" style="padding: 10px;">
+                          <span style="font-weight: 700; color: #DC2626; background-color: #FEF2F2; border: 1px solid #FECACA; padding: 2px 8px; border-radius: 4px;">0.28 (Poor)</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ROW 6: KEY HIGHLIGHTS & ANOMALY LOG -->
+          <tr>
+            <td style="padding-bottom: 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="neutral-card mobile-pad" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 16px; padding: 20px 22px;">
+                <tr>
+                  <td>
+                    <div style="font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; color: #0F172A; margin-bottom: 12px;">
+                      Key Highlights &amp; Anomaly Log
+                    </div>
+
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size: 12px; line-height: 1.6;">
+                      <tr>
+                        <td width="22" valign="top" style="padding-bottom: 8px; color: #10B981; font-weight: 800;">&check;</td>
+                        <td style="padding-bottom: 8px; color: #0F172A; font-weight: 500;">
+                          <strong style="font-weight: 700;">100% Availability Maintained:</strong> Zero downtime incidents detected across all 60 scheduled edge probes.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="22" valign="top" style="padding-bottom: 8px; color: #2563EB; font-weight: 800;">&check;</td>
+                        <td style="padding-bottom: 8px; color: #0F172A; font-weight: 500;">
+                          <strong style="font-weight: 700;">Fast Desktop Interaction:</strong> Core Web Vitals (INP: 82ms, CLS: 0.06) remain well inside Google's passing thresholds.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="22" valign="top" style="padding-bottom: 8px; color: #10B981; font-weight: 800;">&check;</td>
+                        <td style="padding-bottom: 8px; color: #0F172A; font-weight: 500;">
+                          <strong style="font-weight: 700;">SSL Certificate Security:</strong> Verified Let's Encrypt TLS 1.3 encryption with <strong style="font-weight: 700;">51 days remaining</strong>.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="22" valign="top" style="color: #10B981; font-weight: 800;">&check;</td>
+                        <td style="color: #0F172A; font-weight: 500;">
+                          <strong style="font-weight: 700;">Zero Perimeter Vulnerabilities:</strong> Google Safe Browsing and integrity scans reported <strong style="font-weight: 700;">0 malware threats</strong>.
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- PRIMARY CTA BUTTON: OPEN LIVE DASHBOARD -->
+          <tr>
+            <td align="center" style="padding-bottom: 24px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="background-color: #0F172A; border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);">
+                    <a href="https://cpvia.com/" target="_blank" style="display: inline-block; padding: 14px 30px; font-size: 13px; font-weight: 700; color: #FFFFFF; text-decoration: none; letter-spacing: -0.01em;">
+                      Open Live Telemetry Dashboard &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- NEUTRAL FOOTER (Clean & Branded) -->
+          <tr>
+            <td class="neutral-card" style="background-color: #FFFFFF; border: 1px solid #D8E2EC; border-radius: 14px; padding: 18px 22px; text-align: center;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin: 0 auto 8px auto;">
+                <tr>
+                  <td valign="middle" style="padding-right: 6px;">
+                    <svg viewBox="0 0 1800 1800" width="16" height="16" style="display: block;" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#2296D3" d="M983.74,36,916,164,796.68,389.45c-83.85-29.24-176-28.56-259.15,5.2C432,437.47,353.93,528.31,322.59,637.27q-4.41,17.49-7.2,35.59a365.41,365.41,0,0,0-7.4,73.35c0,119.12,57.26,224.85,145.75,291.21L317.57,1294.71l-19,36H1721.11Z"/>
+                      <path fill="#0F172A" d="M609.41,657V871.47l392.42,0c-8.62,31.62-32.93,103.69-100.48,163-102.12,89.73-225.52,82.24-254,79.62C495.56,1100.18,338,977.53,313.67,795.61,292.6,638.12,377,478.39,524.91,412.13c127.17-57,278.6-34.68,388.9,57.41l167-170.68c-40.3-38.64-104.91-90.09-195.19-121.8C635.68,89.26,297,190.75,150.1,450c-115.57,204-60.65,414.31-49.83,452.81,55.59,197.95,194.44,303.47,234,331.49C465,1327,598.8,1343.54,670.07,1345.92c53.95,1.79,184.55,4.42,317.4-75.83,202.68-122.43,248-339.55,256.74-381.32,20.25-96.95,12.38-179.63,3.25-231.82Z"/>
+                    </svg>
+                  </td>
+                  <td valign="middle">
+                    <span style="font-size: 11px; font-weight: 700; color: #0F172A;">GA Web Telemetry</span>
+                    <span style="font-size: 11px; color: #CBD5E1; margin: 0 4px;">&bull;</span>
+                    <span style="font-size: 11px; color: #64748B; font-weight: 500;">Continuous SRE Performance &amp; Infrastructure Monitoring</span>
+                  </td>
+                </tr>
+              </table>
+              <div style="font-size: 10px; color: #94A3B8; line-height: 1.5; max-width: 480px; margin: 0 auto; font-weight: 500;">
+                Monitored on behalf of <strong style="color: #64748B;">CPVIA</strong> (<a href="https://cpvia.com/" target="_blank" style="color: #2563EB; text-decoration: none;">https://cpvia.com/</a>). Synthetic metrics calibrated hourly across 6 global regions.
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Email Container -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
